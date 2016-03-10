@@ -1,7 +1,7 @@
 # Sambatra Lending
 
 ### Summary
-Microlending platform for raising funds, matching loan applicants with lenders and tracking analytics. This service is being designed for Sambatra Lending a non-profit based in Madagascar.
+Microlending platform for raising funds, matching loan applicants with lenders and tracking analytics. This service is being designed for Sambatra Lending a non-profit based in Madagascar. However, this repo will be left fairly flavorless in order to be reporpused for the growing microlending industry.
 
 ### Case Study
 
