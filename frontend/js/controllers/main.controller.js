@@ -1,4 +1,4 @@
-angular.module('templateApp')
+angular.module('lendingApp')
   .controller('MainController', [MainController]);
 
 

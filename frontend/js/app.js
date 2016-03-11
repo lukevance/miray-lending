@@ -1,1 +1,1 @@
-angular.module('templateApp', []);
+angular.module('lendingApp', ['ngRoute']);
