@@ -1,7 +1,7 @@
 'use strict';
 
 function getAll () {
-
+  console.log('stuffff');
 }
 
 function getById () {
