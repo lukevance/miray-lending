@@ -2,11 +2,18 @@
 exports.seed = function(knex, Promise) {
   return Promise.join(
     // Deletes ALL existing entries
-    knex('table_name').del(), 
+    knex('donations').del(),
 
     // Inserts seed entries
-    knex('table_name').insert({id: 1, colName: 'rowValue'}),
-    knex('table_name').insert({id: 2, colName: 'rowValue2'}),
-    knex('table_name').insert({id: 3, colName: 'rowValue3'})
+    knex('donations').insert({
+      loan_id: 1,
+      donor_id: 2,
+      amount: 30
+    }),
+    knex('donations').insert({
+      loan_id: 2,
+      donor_id: 1,
+      amount: 10
+    })
   );
 };
