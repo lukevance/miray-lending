@@ -29,7 +29,7 @@ function create (req, res, next) {
   .create({
       name: req.body.name,
       email: req.body.email,
-      password: req.body.email
+      password: req.body.password
     })
   .exec(function(err, userMade){
     if (err) {
@@ -40,12 +40,40 @@ function create (req, res, next) {
   });
 }
 
-function update () {
-
+function update (req, res, next) {
+  // check for authorization
+  // admin credentials?
+  // email from jwt matches email in user?
+  req.models.users
+  .update({
+    id: req.params.id
+  }, req.body)
+  .exec(function(err, updatedUser){
+    if (err) {
+      return res.json({error: err}, 500);
+    } else {
+      res.json(updatedUser);
+    }
+  });
 }
 
-function deleteOne () {
-
+function deleteOne (req, res, next) {
+  // check for authorization
+  // email from jwt matches email in user?
+  // admin credentials?
+  console.log(req.params.id);
+  console.log(req.body);
+  req.models.users
+  .destroy({
+    id: req.params.id
+  })
+  .exec(function(err, deletedUser) {
+    if (err) {
+      return res.json({error: err}, 500);
+    } else {
+      res.json(deletedUser);
+    }
+  });
 }
 
 module.exports = {

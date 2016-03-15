@@ -17,13 +17,12 @@ var User = Waterline.Collection.extend({
     },
     password: {
       type: 'string'
-    }
+    },
 
-    // donations: {
-    //   collection: 'donation',
-    //
-    //
-    // }
+    donations: {
+      collection: 'donations',
+      via : 'donor'
+    }
   }
 });
 

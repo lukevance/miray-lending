@@ -8,9 +8,10 @@ var config = require('./waterlineFile');
 
 // load model definitions
 var User = require('../modules/users/users.model');
-
+var Donation = require('../modules/donations/donations.model');
 
 orm.loadCollection(User);
+orm.loadCollection(Donation);
 
 module.exports = {};
 
