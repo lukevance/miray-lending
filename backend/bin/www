@@ -9,15 +9,7 @@ var debug = require('debug')('backend:server');
 var http = require('http');
 
 //** Waterline Setup **//
-const Waterline = require('waterline');
-var config = require('../db/waterlineFile');
-var orm = new Waterline();
-
-// require/import collections from models
-var User = require('../modules/users/users.model');
-
-// load collections from models
-orm.loadCollection(User);
+var orm = require('../db/orm');
 
 /**
  * Get port from environment and store in Express.
@@ -36,13 +28,10 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-orm.initialize(config, function(err, models){
-  if (err) {
-    throw err;
-  }
+orm.initialize(app, port, function(collections, connections){
 
-  app.models = models.collections;
-  app.connections = models.connections;
+  app.models = collections;
+  app.connections = connections;
 
   server.listen(port);
   server.on('error', onError);
