@@ -1,7 +1,6 @@
 'use strict';
 
 function getById (req, res) {
-  console.log(req.params);
   req.models.donations
   .find()
   .where({id: req.params.id})

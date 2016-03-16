@@ -2,7 +2,7 @@
 
 const Waterline = require('Waterline');
 
-var Donation = Waterline.Collection.extend({
+let Donation = Waterline.Collection.extend({
   identity: 'donations',
   connection: 'myLocalPostgres',
 
@@ -13,6 +13,9 @@ var Donation = Waterline.Collection.extend({
 
     donor: {
       model: 'users'
+    },
+    loan: {
+      model: 'loans'
     }
   }
 });
