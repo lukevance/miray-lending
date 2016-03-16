@@ -13,6 +13,10 @@ let Borrower = Waterline.Collection.extend({
     loans: {
       collection: 'loans',
       via: 'borrower'
+    },
+    payments: {
+      collection: 'payments',
+      via: 'borrower'
     }
   }
 });

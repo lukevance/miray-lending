@@ -11,12 +11,13 @@ let User = require('../modules/users/users.model');
 let Donation = require('../modules/donations/donations.model');
 let Loan = require('../modules/loans/loans.model');
 let Borrower = require('../modules/borrowers/borrowers.model');
-
+let Payment = require('../modules/payments/payments.model');
 
 orm.loadCollection(User);
 orm.loadCollection(Donation);
 orm.loadCollection(Loan);
 orm.loadCollection(Borrower);
+orm.loadCollection(Payment);
 
 module.exports = {};
 
