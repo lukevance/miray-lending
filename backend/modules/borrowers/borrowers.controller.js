@@ -1,44 +1,44 @@
 'use strict';
 
 function getAll (req, res) {
-  req.models.users
+  req.models.borrowers
   .find()
-  .populate('donations')
-  .exec(function(err, usersData) {
+  .populate('loans')
+  .exec(function(err, borrowersData) {
     if (err) {
       return res.json({error: err}, 500);
     } else {
-      res.json(usersData);
+      res.json(borrowersData);
     }
   });
 }
 
 function getById (req, res) {
-  req.models.users
+  req.models.borrowers
   .find()
   .where({id: req.params.id})
   .limit(1)
-  .exec(function(err, userData){
+  .exec(function(err, borrowerData){
     if (err) {
       return res.json({error: err}, 500);
     } else {
-      res.json(userData);
+      res.json(borrowerData);
     }
   });
 }
 
 function create (req, res) {
-  req.models.users
+  // do some validation
+  req.models.borrowers
   .create({
       name: req.body.name,
-      email: req.body.email,
-      password: req.body.password
+      bio: req.body.bio
     })
-  .exec(function(err, userMade){
+  .exec(function(err, newBorrower){
     if (err) {
       return res.json({error: err}, 500);
     } else {
-      res.json(userMade);
+      res.json(newBorrower);
     }
   });
 }
@@ -46,33 +46,31 @@ function create (req, res) {
 function update (req, res) {
   // check for authorization
   // admin credentials?
-  // email from jwt matches email in user?
-  req.models.users
+  req.models.borrowers
   .update({
     id: req.params.id
   }, req.body)
-  .exec(function(err, updatedUser){
+  .exec(function(err, updatedBorrower){
     if (err) {
       return res.json({error: err}, 500);
     } else {
-      res.json(updatedUser);
+      res.json(updatedBorrower);
     }
   });
 }
 
 function deleteOne (req, res) {
   // check for authorization
-  // email from jwt matches email in user?
   // admin credentials?
-  req.models.users
+  req.models.borrowers
   .destroy({
     id: req.params.id
   })
-  .exec(function(err, deletedUser) {
+  .exec(function(err, deletedBorrower) {
     if (err) {
       return res.json({error: err}, 500);
     } else {
-      res.json(deletedUser);
+      res.json(deletedBorrower);
     }
   });
 }

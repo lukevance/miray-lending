@@ -1,6 +1,6 @@
 'use strict';
 
-const Waterline = require('Waterline');
+const Waterline = require('waterline');
 
 let Donation = Waterline.Collection.extend({
   identity: 'donations',
