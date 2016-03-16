@@ -20,7 +20,6 @@ module.exports.initialize = function(app, PORT, callback) {
     if (err) {
       throw err;
     }
-
     callback(models.collections, models.connections);
   });
 };

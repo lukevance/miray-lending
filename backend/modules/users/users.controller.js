@@ -1,7 +1,10 @@
 'use strict';
 
-function getAll (req, res, next) {
-  req.models.users.find().exec(function(err, usersData) {
+function getAll (req, res) {
+  req.models.users
+  .find()
+  .populate('donations')
+  .exec(function(err, usersData) {
     if (err) {
       return res.json({error: err}, 500);
     } else {
@@ -10,7 +13,7 @@ function getAll (req, res, next) {
   });
 }
 
-function getById (req, res, next) {
+function getById (req, res) {
   req.models.users
   .find()
   .where({id: req.params.id})
@@ -24,7 +27,7 @@ function getById (req, res, next) {
   });
 }
 
-function create (req, res, next) {
+function create (req, res) {
   req.models.users
   .create({
       name: req.body.name,
@@ -40,7 +43,7 @@ function create (req, res, next) {
   });
 }
 
-function update (req, res, next) {
+function update (req, res) {
   // check for authorization
   // admin credentials?
   // email from jwt matches email in user?
@@ -57,7 +60,7 @@ function update (req, res, next) {
   });
 }
 
-function deleteOne (req, res, next) {
+function deleteOne (req, res) {
   // check for authorization
   // email from jwt matches email in user?
   // admin credentials?
