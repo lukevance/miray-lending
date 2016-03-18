@@ -2,6 +2,9 @@ angular.module('lendingApp')
   .service('newUserService', ['$http', newUserService]);
 
 function newUserService($http){
+  return function () {
+    $http.post()
+  }
   // connect to new user post request at API
 }
 
