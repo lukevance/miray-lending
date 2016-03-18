@@ -15,6 +15,11 @@ function SignupController (newUserService) {
     newUserService(vm.newUser, vm.successMessage);
   }
 
+  function successMessage (userObj) {
+    newUserClear();
+    console.log('user created: ' + userObj);
+  }
+
   function newUserClear() {
     vm.newUser.name = '';
     vm.newUser.email = '';
@@ -22,8 +27,5 @@ function SignupController (newUserService) {
     vm.newUser.confPassword = '';
   }
 
-  function successMessage (userObj) {
-    newUserClear();
-    console.log('user created: ' + userObj);
-  }
+
 }
