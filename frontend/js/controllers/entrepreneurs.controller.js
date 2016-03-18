@@ -1,7 +1,7 @@
 angular.module('lendingApp')
   .controller('EntrepreneursController', ['getOneEntrepreneurService', 'getEntrepreneursService', EntrepreneursController]);
 
-function EntrepreneursController (getEntrepreneursService, getOneEntrepreneurService) {
+function EntrepreneursController (getOneEntrepreneurService, getEntrepreneursService) {
   var vm = this;
   vm.title = 'Entrepreneur Page';
   vm.subtitle = 'This is the entrepreuner page';

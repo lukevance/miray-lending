@@ -4,7 +4,7 @@ angular.module('lendingApp')
 function newUserService($http){
   return function (userData, nextFunc) {
     // connect to new user post request at API
-    $http.post('//localhost:3000', userData)
+    $http.post('//localhost:3000/user/new', userData)
     .then(function(responseData, err){
       if (err) {
         throw err;

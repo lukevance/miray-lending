@@ -28,6 +28,7 @@ function getById (req, res) {
 }
 
 function create (req, res) {
+  console.log(req.body);
   req.models.users
   .create({
       name: req.body.name,
