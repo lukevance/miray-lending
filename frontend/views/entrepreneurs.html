@@ -6,10 +6,14 @@
       <h3>{{EC.subtitle}}</h3>
     </div>
   </div>
-  <div class="row">
+  <div class="row" ng-repeat="entrepreneur in EC.allEntrepreneurs">
     <div class="col-md-12">
+      <h3>{{entrepreneur.name}}</h3>
       <p>
-        {{EC.allEntrepreneurs}}
+        {{entrepreneur.bio}}
+      </p>
+      <p>
+        {{entrepreneur.loans}}
       </p>
     </div>
   </div>
