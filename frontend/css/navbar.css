@@ -1,5 +1,30 @@
-.navbar-fixed {
+/*.navbar-fixed {
   position: fixed;
   top: 0;
   left: 0;
+}*/
+
+nav {
+  width: 100%;
+  border-bottom: solid black 1px;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+}
+
+.navlinks-left {
+  float: left;
+}
+
+.navlinks-right {
+  float: right;
+}
+
+ul.navlinks {
+    display: inline;
+}
+
+.navlinks > li {
+  list-style: none;
+  display: inline;
 }
