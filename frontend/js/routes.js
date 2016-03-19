@@ -20,5 +20,9 @@ angular.module('lendingApp')
       .when('/backers', {
         templateUrl: 'views/backers.html',
         controller: 'BackersController as BC'
+      })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'AdminController as ADC'
       });
   });

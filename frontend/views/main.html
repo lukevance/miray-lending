@@ -11,4 +11,25 @@
       <p>{{MC.introParagraph}}</p>
     </div>
   </div>
+  <div class="row seperator sectionTitle">
+    <div class="col-md-12">
+      <h4>This is where the entrepreneurs will be to browse through</h4>
+    </div>
+  </div>
+  <div class="row entBrowser">
+    <div class="col-md-4" ng-repeat="entrepreneur in MC.entrepreneurs">
+
+      <div class="row">
+        <div class="col-md-6">
+          <span>picture: {{entrepreneur.pic}}</span>
+          <h5>Name: {{entrepreneur.name}}</h5>
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
