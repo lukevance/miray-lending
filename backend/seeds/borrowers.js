@@ -7,7 +7,8 @@ exports.seed = function(knex, Promise) {
     // Inserts seed entries
     knex('borrowers').insert({
       name: 'Bob Barker',
-      bio: 'Bob is from springfield and used to be a Dentist, he has 4 kids and a dog.'
+      bio: 'Bob is from springfield and used to be a Dentist, he has 4 kids and a dog.',
+      dob: ''
     }),
     knex('borrowers').insert({
       name: 'Jenny Jetson',
