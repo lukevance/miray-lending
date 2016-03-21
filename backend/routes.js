@@ -8,6 +8,7 @@ const borrowerRoutes = require('./modules/borrowers/borrowers.routes');
 const donationRoutes = require('./modules/donations/donations.routes');
 const loanRoutes = require('./modules/loans/loans.routes');
 const paymentRoutes = require('./modules/payments/payments.routes');
+const groupRoutes = require('./modules/groups/groups.routes');
 
 // direct routes to correct modules
 router.use('/user', userRoutes);
@@ -16,5 +17,6 @@ router.use('/borrower', borrowerRoutes);
 router.use('/donation', donationRoutes);
 router.use('/loan', loanRoutes);
 router.use('/pay', paymentRoutes);
+router.use('/group', groupRoutes);
 
 module.exports = router;
