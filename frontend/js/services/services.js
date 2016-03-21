@@ -10,7 +10,7 @@ function generalService(){
 
 function newGroupService ($http) {
   return function (groupObj, nextFunc) {
-    return $http.post('//localhost:3000/group/new')
+    return $http.post('//localhost:3000/group/new', groupObj)
     .then(function(groupData){
       nextFunc(groupData);
     });
@@ -19,7 +19,7 @@ function newGroupService ($http) {
 
 function newLoanService ($http) {
   return function (loanObj, nextFunc) {
-    return $http.post('//localhost:3000/loan/new')
+    return $http.post('//localhost:3000/loan/new', loanObj)
     .then(function(loanData){
       nextFunc(loanData);
     });
@@ -28,7 +28,7 @@ function newLoanService ($http) {
 
 function newPaymentService ($http) {
   return function (paymentObj, nextFunc) {
-    return $http.post('//localhost:3000/payment/new')
+    return $http.post('//localhost:3000/payment/new', paymentObj)
     .then(function(paymentData){
       nextFunc(paymentData);
     });

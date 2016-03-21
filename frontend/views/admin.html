@@ -66,6 +66,10 @@
           <label for="entBio">Bio</label>
           <input type="textarea" class="form-control" id="entBio" ng-model="ADC.entForm.bio">
         </div>
+        <div class="form-group">
+          <label for="entImage">Image URL</label>
+          <input type="text" class="form-control" id="entImage" ng-model="ADC.entForm.image_url">
+        </div>
 
         <button type="submit" class="btn btn-default" ng-click="ADC.submitForm($event, ADC.validEnt, ADC.entForm)">Submit</button>
       </form>

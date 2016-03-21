@@ -20,19 +20,26 @@ function AdminController (newGroupService, newEntrepreneurService, newLoanServic
   // define submit functino
   vm.submitForm = submitForm;
 
+  // define clear funciton
+  vm.clearForm = clearForm;
+
 
   // define validation functions
   function validGroup (groupForm) {
     console.log('sent: ' + groupForm);
     newGroupService(groupForm, function(newGroup){
-      console.log('recvd: ' + newGroup);
+      console.log('recvd: ');
+      console.log(newGroup.data);
     });
+
   }
 
   function validEnt (entForm) {
     console.log('sent: ' + entForm);
     newEntrepreneurService(entForm, function(newEnt){
-      console.log('recvd: ' + newEnt);
+      console.log('recvd: ');
+      console.log(newEnt.data);
+
     });
   }
 
@@ -53,5 +60,10 @@ function AdminController (newGroupService, newEntrepreneurService, newLoanServic
   function submitForm (event, validFunc, formObj) {
     event.preventDefault();
     validFunc(formObj);
+  }
+
+  function clearForm (formObj){
+    console.log(formObj);
+    formObj = {};
   }
 }
