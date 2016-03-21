@@ -13,9 +13,10 @@ function getById (req, res) {
 }
 
 function create (req, res) {
+  console.log(req.body);
   // do some authorization to be sure that person can create
   let newLoanInfo = req.body;
-  newLoanInfo.borrower = req.body.borrower_id;
+  // newLoanInfo.borrower = req.body.borrower_id;
   req.models.loans
   .create(newLoanInfo)
   .exec(function(err, newLoan) {
