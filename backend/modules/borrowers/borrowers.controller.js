@@ -30,10 +30,7 @@ function getById (req, res) {
 function create (req, res) {
   // do some validation
   req.models.borrowers
-  .create({
-      name: req.body.name,
-      bio: req.body.bio
-    })
+  .create(req.body)
   .exec(function(err, newBorrower){
     if (err) {
       return res.json({error: err}, 500);

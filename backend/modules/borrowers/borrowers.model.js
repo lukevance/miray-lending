@@ -9,6 +9,13 @@ let Borrower = Waterline.Collection.extend({
   attributes: {
     name: 'string',
     bio: 'text',
+    dob: 'date',
+    id_num_national: 'string',
+    image_url: 'string',
+    phone: 'string',
+    address: 'string',
+    city: 'string',
+    region: 'string',
 
     loans: {
       collection: 'loans',
@@ -17,6 +24,9 @@ let Borrower = Waterline.Collection.extend({
     payments: {
       collection: 'payments',
       via: 'borrower'
+    },
+    group: {
+      model: 'loan_groups'
     }
   }
 });
