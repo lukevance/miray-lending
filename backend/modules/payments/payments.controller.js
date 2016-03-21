@@ -16,6 +16,7 @@ function getById (req, res) {
 }
 
 function create (req, res) {
+  console.log(req.body);
   var paymentInfo = req.body;
   paymentInfo.borrower = req.body.borrower_id;
   paymentInfo.loan = req.body.loan_id;

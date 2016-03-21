@@ -28,7 +28,7 @@ function newLoanService ($http) {
 
 function newPaymentService ($http) {
   return function (paymentObj, nextFunc) {
-    return $http.post('//localhost:3000/payment/new', paymentObj)
+    return $http.post('//localhost:3000/pay/new', paymentObj)
     .then(function(paymentData){
       nextFunc(paymentData);
     });

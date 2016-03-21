@@ -5,6 +5,17 @@ function AdminController (newGroupService, newEntrepreneurService, newLoanServic
   var vm = this;
   vm.title = 'Admin Page';
   vm.subtitle = 'welcome to the admin page - this page needs authorization';
+  vm.groupActive = false;
+  vm.entActive = false;
+  vm.loanActive = false;
+  vm.paymentActive = false;
+
+  // activate and grab each form
+
+  // ----- get groups ----- //
+
+  // ----- get borrowers ----- //
+
   // setup models for forms data
   vm.groupForm = {};
   vm.entForm = {};
