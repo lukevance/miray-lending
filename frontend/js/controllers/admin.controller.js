@@ -1,7 +1,7 @@
 angular.module('lendingApp')
-  .controller('AdminController', [AdminController]);
+  .controller('AdminController', ['newGroupService', 'newEntrepreneurService', 'newLoanService', 'newPaymentService', AdminController]);
 
-function AdminController () {
+function AdminController (newGroupService, newEntrepreneurService, newLoanService, newPaymentService) {
   var vm = this;
   vm.title = 'Admin Page';
   vm.subtitle = 'welcome to the admin page - this page needs authorization';
@@ -23,19 +23,31 @@ function AdminController () {
 
   // define validation functions
   function validGroup (groupForm) {
-    console.log(groupForm);
+    console.log('sent: ' + groupForm);
+    newGroupService(groupForm, function(newGroup){
+      console.log('recvd: ' + newGroup);
+    });
   }
 
   function validEnt (entForm) {
-    console.log(entForm);
+    console.log('sent: ' + entForm);
+    newEntrepreneurService(entForm, function(newEnt){
+      console.log('recvd: ' + newEnt);
+    });
   }
 
   function validLoan (loanForm) {
-    console.log(loanForm);
+    console.log('sent: ' + loanForm);
+    newLoanService(loanForm, function(newLoan) {
+      console.log('recvd: ' + newLoan);
+    });
   }
 
   function validPayment (paymentForm) {
-    console.log(paymentForm);
+    console.log('sent: ' + paymentForm);
+    newPaymentService(paymentForm, function(newPayment) {
+      console.log(newPayment);
+    });
   }
 
   function submitForm (event, validFunc, formObj) {
