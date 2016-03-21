@@ -24,4 +24,11 @@ function MainController () {
     }
   ];
 
+
+  // get active loans service
+    // .then get entrepreneurs service
+      // .then get donations service
+        // populate model with entrepreneur json.
+
+
 }
