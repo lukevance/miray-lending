@@ -8,6 +8,7 @@ exports.up = function(knex, Promise) {
     table.integer('rate_plan_id');
     table.text('description');
     table.timestamp('date_awarded');
+    table.boolean('active');
   });
 };
 

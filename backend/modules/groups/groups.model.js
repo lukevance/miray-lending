@@ -12,9 +12,9 @@ let Group = Waterline.Collection.extend({
     city: 'string',
     region: 'string',
 
-    members: {
-      collection: 'borrowers',
-      via: 'group'
+    loans: {
+      collection: 'loans',
+      via: 'group_id'
     }
   }
 });

@@ -7,14 +7,12 @@ let Donation = Waterline.Collection.extend({
   connection: 'myLocalPostgres',
 
   attributes: {
-    loan_id: 'integer',
-    donor_id: 'integer',
     amount: 'integer',
 
-    donor: {
+    donor_id: {
       model: 'users'
     },
-    loan: {
+    loan_id: {
       model: 'loans'
     }
   }
