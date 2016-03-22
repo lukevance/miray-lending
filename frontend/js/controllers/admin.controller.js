@@ -54,7 +54,9 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
   // get info for payment form
   function activatePayment () {
     // get borrowers
-
+    getEntrepreneursService(function(entrepreneurs){
+      vm.entrepreneursInfo = entrepreneurs.data;
+    });
     // get loans
     vm.paymentActive = !vm.paymentActive;
   }

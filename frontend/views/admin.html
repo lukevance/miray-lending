@@ -120,7 +120,7 @@
       <form ng-show="ADC.paymentActive">
         <div class="form-group">
           <label for="payEntName">Borrower Name</label>
-          <input type="text" class="form-control" id="payEntName" placeholder="Name" ng-model="ADC.paymentForm.borrower_name">
+          <select type="text" class="form-control" id="payEntName" placeholder="Name" ng-model="ADC.paymentForm.borrower_name" ng-options="ent as ent.name for ent in ADC.entrepreneursInfo"></select>
         </div>
         <div class="form-group">
           <label for="payAmount">Amount</label>
