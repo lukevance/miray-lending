@@ -4,6 +4,7 @@ function getAll (req, res) {
   req.models.borrowers
   .find()
   .populate('loans')
+  .populate('payments')
   .exec(function(err, borrowersData) {
     if (err) {
       return res.json({error: err}, 500);

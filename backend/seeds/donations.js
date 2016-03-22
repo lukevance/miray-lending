@@ -8,14 +8,12 @@ exports.seed = function(knex, Promise) {
     knex('donations').insert({
       loan_id: 1,
       donor_id: 2,
-      amount: 30,
-      date: new Date()
+      amount: 30
     }),
     knex('donations').insert({
       loan_id: 2,
       donor_id: 1,
-      amount: 10,
-      date: new Date()
+      amount: 10
     })
   );
 };

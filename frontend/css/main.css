@@ -19,3 +19,15 @@ body {
   h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
   h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
   h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+img.profile-img {
+  max-width: 200px;
+}
+
+li.ent-item {
+  border: black thin solid;
+  list-style: none;
+  display: inline;
+  float: left;
+  max-width: 300px;
+}
