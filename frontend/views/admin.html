@@ -9,8 +9,8 @@
 
   <div class="row">
     <div class="col-md-6 create-group">
-      <h4>Create a Group</h4>
-      <form>
+      <h4 ng-click="ADC.activateGroup()">Create a Group</h4>
+      <form ng-show="ADC.groupActive">
         <div class="form-group">
           <label for="groupName">Group Name</label>
           <input type="text" class="form-control" id="groupName" placeholder="Name" ng-model="ADC.groupForm.name">
@@ -32,8 +32,8 @@
     </div>
 
     <div class="col-md-6 create-entrepreneur">
-      <h4>Create an Entrepreneur</h4>
-      <form>
+      <h4 ng-click="ADC.activateEntrepreneur()">Create an Entrepreneur</h4>
+      <form ng-show="ADC.entActive">
         <div class="form-group">
           <label for="entName">Full Name</label>
           <input type="text" class="form-control" id="entName" placeholder="Name" ng-model="ADC.entForm.name">
@@ -78,15 +78,15 @@
 
   <div class="row">
     <div class="col-md-6 create-loan">
-      <h4>Create A New Loan</h4>
-      <form>
+      <h4 ng-click="ADC.activateLoan()">Create A New Loan</h4>
+      <form ng-show="ADC.loanActive">
         <div class="form-group">
           <label for="loanEntName">Borrower Name</label>
-          <input type="text" class="form-control" id="loanEntName" placeholder="Borrower Name" ng-model="ADC.loanForm.borrower_name">
+          <select type="text" class="form-control" id="loanEntName" ng-model="ADC.loanForm.borrower" ng-options="ent as ent.name for ent in ADC.entrepreneursInfo"></select>
         </div>
         <div class="form-group">
           <label for="loanGroupName">Group Name</label>
-          <input type="text" class="form-control" id="loanGroupName" placeholder="Group Name" ng-model="ADC.loanForm.group_name">
+          <select type="text" class="form-control" id="loanGroupName" ng-model="ADC.loanForm.group" ng-options="group as group.name for group in ADC.groupsInfo"></select>
         </div>
         <div class="form-group">
           <label for="loanAmount">Amount</label>
@@ -94,7 +94,7 @@
         </div>
         <div class="form-group">
           <label for="loanRatePlan">Rate Plan</label>
-          <input type="text" class="form-control" id="loanRatePlan" ng-model="ADC.loanForm.rate_plan_id">
+          <select type="text" class="form-control" id="loanRatePlan" ng-model="ADC.loanForm.rate_plan" ng-options="rate as rate.name for rate in ADC.loanPlans"></select>
         </div>
         <div class="form-group">
           <label for="loanDuration">Expected Duration</label>
@@ -113,8 +113,8 @@
     </div>
 
     <div class="col-md-6 create-payment">
-      <h4>Create A New Payment</h4>
-      <form>
+      <h4 ng-click="ADC.activatePayment()">Create A New Payment</h4>
+      <form ng-show="ADC.paymentActive">
         <div class="form-group">
           <label for="payEntName">Borrower Name</label>
           <input type="text" class="form-control" id="payEntName" placeholder="Name" ng-model="ADC.paymentForm.borrower_name">
