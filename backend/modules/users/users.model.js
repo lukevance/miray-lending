@@ -18,10 +18,11 @@ var User = Waterline.Collection.extend({
     password: {
       type: 'string'
     },
+    role: 'string',
 
     donations: {
       collection: 'donations',
-      via : 'donor'
+      via : 'donor_id'
     }
   }
 });
