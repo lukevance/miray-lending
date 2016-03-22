@@ -6,9 +6,7 @@ exports.up = function(knex, Promise) {
     table.integer('balance');
     table.integer('group_id');
     table.integer('rate_plan_id');
-    table.integer('duration');
     table.text('description');
-    table.timestamp('date_created');
     table.timestamp('date_awarded');
   });
 };

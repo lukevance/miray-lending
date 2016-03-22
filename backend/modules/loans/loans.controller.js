@@ -1,5 +1,7 @@
 'use strict';
 
+var knex = require('../../db/knex');
+
 function getById (req, res) {
   req.models.loans
   .find({id: req.params.id})
@@ -9,6 +11,17 @@ function getById (req, res) {
     } else {
       res.json(loanData);
     }
+  });
+}
+
+function getPlans (req, res) {
+  knex('loan_plans')
+  .select()
+  .then(function(planData){
+    res.json(planData);
+  })
+  .catch(function(error){
+    console.log(error);
   });
 }
 
@@ -46,5 +59,6 @@ function deleteOne (req, res) {
 module.exports = {
   getById,
   create,
-  deleteOne
+  deleteOne,
+  getPlans
 };
