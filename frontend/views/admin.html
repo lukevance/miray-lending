@@ -28,6 +28,7 @@
           <input type="text" class="form-control" id="groupRegion" placeholder="Region" ng-model="ADC.groupForm.region">
         </div>
         <button type="submit" class="btn btn-default" ng-click="ADC.submitForm($event, ADC.validGroup, ADC.groupForm)">Submit</button>
+        <button type="button" class="btn btn-classic" ng-click="ADC.clearForm('group')">Cancel</button>
       </form>
     </div>
 
@@ -72,6 +73,7 @@
         </div>
 
         <button type="submit" class="btn btn-default" ng-click="ADC.submitForm($event, ADC.validEnt, ADC.entForm)">Submit</button>
+        <button type="button" class="btn btn-classic" ng-click="ADC.clearForm('ent')">Cancel</button>
       </form>
     </div>
   </div> <!-- end of row -->
@@ -109,6 +111,7 @@
           <input type="text" class="form-control" id="loanDescription" ng-model="ADC.loanForm.description">
         </div>
         <button type="submit" class="btn btn-default" ng-click="ADC.submitForm($event, ADC.validLoan, ADC.loanForm)">Submit</button>
+        <button type="button" class="btn btn-classic" ng-click="ADC.clearForm('loan')">Cancel</button>
       </form>
     </div>
 
@@ -128,6 +131,7 @@
           <input type="date" class="form-control" id="payDate" ng-model="ADC.paymentForm.date">
         </div>
         <button type="submit" class="btn btn-default" ng-click="ADC.submitForm($event, ADC.validPayment, ADC.paymentForm)">Submit</button>
+        <button type="button" class="btn btn-classic" ng-click="ADC.clearForm('payment')">Cancel</button>
       </form>
     </div>
 

@@ -23,30 +23,32 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
     //   console.log(groups.data);
     //   vm.groupsInfo = groups.data;
     // });
-    vm.groupActive = true;
+    vm.groupActive = !vm.groupActive;
   }
 
   // get info for entrepreneur form
   function activateEntrepreneur () {
-    vm.entActive = true;
+    vm.entActive = !vm.entActive;
   }
 
   // get info for loan form
   function activateLoan () {
-    // get groups
-    getGroupService(function(groups){
-      vm.groupsInfo = groups.data;
-      // get borrowers
-      getEntrepreneursService(function(entrepreneurs){
-        vm.entrepreneursInfo = entrepreneurs.data;
-        // get plans
-        getLoanPlansService(function(loanPlans){
-          vm.loanPlans = loanPlans;
+    if (!vm.groupsInfo) {
+      // get groups
+      getGroupService(function(groups){
+        vm.groupsInfo = groups.data;
+        // get borrowers
+        getEntrepreneursService(function(entrepreneurs){
+          vm.entrepreneursInfo = entrepreneurs.data;
+          // get plans
+          getLoanPlansService(function(loanPlans){
+            vm.loanPlans = loanPlans;
+          });
         });
       });
-    });
+    }
 
-    vm.loanActive = true;
+    vm.loanActive = !vm.loanActive;
   }
 
   // get info for payment form
@@ -54,7 +56,7 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
     // get borrowers
 
     // get loans
-    vm.paymentActive = true;
+    vm.paymentActive = !vm.paymentActive;
   }
 
 
@@ -79,21 +81,19 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
 
   // define validation functions
   function validGroup (groupForm) {
-    console.log('sent: ' + groupForm);
     newGroupService(groupForm, function(newGroup){
       console.log('recvd: ');
       console.log(newGroup.data);
     });
-
+    clearForm('group');
   }
 
   function validEnt (entForm) {
-    console.log('sent: ' + entForm);
     newEntrepreneurService(entForm, function(newEnt){
       console.log('recvd: ');
       console.log(newEnt.data);
-
     });
+    clearForm('ent');
   }
 
   function validLoan (loanForm) {
@@ -105,17 +105,17 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
       description: loanForm.description,
       date_awarded: loanForm.start_date
     };
-    console.log('sent: ' + loanBody);
     newLoanService(loanBody, function(newLoan) {
       console.log('recvd: ' + newLoan);
     });
+    clearForm('loan');
   }
 
   function validPayment (paymentForm) {
-    console.log('sent: ' + paymentForm);
     newPaymentService(paymentForm, function(newPayment) {
       console.log(newPayment);
     });
+    clearForm('payment');
   }
 
   function submitForm (event, validFunc, formObj) {
@@ -123,8 +123,19 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
     validFunc(formObj);
   }
 
-  function clearForm (formObj){
-    console.log(formObj);
-    formObj = {};
+  function clearForm (form){
+    if (form === 'group') {
+      vm.groupForm = {};
+      vm.groupActive = false;
+    } else if (form === 'ent'){
+      vm.entForm = {};
+      vm.entActive = false;
+    } else if (form === 'loan'){
+      vm.loanForm = {};
+      vm.loanActive = false;
+    } else if (form === 'payment') {
+      vm.paymentForm = {};
+      vm.paymentActive = false;
+    }
   }
 }
