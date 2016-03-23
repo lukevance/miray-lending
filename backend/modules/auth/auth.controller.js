@@ -1,5 +1,7 @@
 'use strict';
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const secret = 'supersecret-secret';
 
 function login (req, res) {
   let userData = req.body;
@@ -18,8 +20,13 @@ function login (req, res) {
           res.json({error: err}, 500);
         } else {
           if (response === true) {
-            // send JWT with users info, but not password
-            res.json(userInfo[0]);
+            // send user profile without password
+            let profile = userInfo[0];
+            profile.password = 'hidden';
+
+            // setup token with users info and secret
+            let token = jwt.sign(profile, secret, {expiresInMinutes: 60});
+            res.json({token: token});
           } else {
             res.json({error: 'incorrect credentials'});
           }

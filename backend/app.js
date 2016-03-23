@@ -5,6 +5,8 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const expressJwt = require('express-jwt');
+const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook');
 const GoogleStrategy = require('passport-google-oauth');
@@ -14,6 +16,13 @@ require('dotenv').load();
 const routes = require('./routes');
 
 const app = express();
+
+// choose routes to protect
+app.use('/api', expressJwt({secret: 'supersecret-secret'}));
+
+// initialize jwt
+// app.use(express.json());
+// app.use(express.urlencoded());
 
 // TODO get rid of view engine and views folder
 // view engine setup
