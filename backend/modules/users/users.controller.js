@@ -32,7 +32,6 @@ function getById (req, res) {
 function create (req, res) {
   let newUserObj = req.body;
   bcrypt.hash(req.body.password, 8, function(err, hash) {
-    console.log(hash);
     newUserObj.password = hash;
     req.models.users
     .create(newUserObj)
