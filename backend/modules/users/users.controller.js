@@ -1,5 +1,7 @@
 'use strict';
 
+const bcrypt = require('bcrypt');
+
 function getAll (req, res) {
   req.models.users
   .find()
@@ -28,19 +30,19 @@ function getById (req, res) {
 }
 
 function create (req, res) {
-  console.log(req.body);
-  req.models.users
-  .create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password
-    })
-  .exec(function(err, userMade){
-    if (err) {
-      return res.json({error: err}, 500);
-    } else {
-      res.json(userMade);
-    }
+  let newUserObj = req.body;
+  bcrypt.hash(req.body.password, 8, function(err, hash) {
+    console.log(hash);
+    newUserObj.password = hash;
+    req.models.users
+    .create(newUserObj)
+    .exec(function(err, userMade){
+      if (err) {
+        return res.json({error: err}, 500);
+      } else {
+        res.json(userMade);
+      }
+    });
   });
 }
 
