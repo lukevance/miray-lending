@@ -25,7 +25,7 @@ function login (req, res) {
             profile.password = 'hidden';
 
             // setup token with users info and secret
-            let token = jwt.sign(profile, secret, {expiresInMinutes: 60});
+            let token = jwt.sign(profile, secret, {expiresIn: 60*30});
             res.json({token: token});
           } else {
             res.json({error: 'incorrect credentials'});

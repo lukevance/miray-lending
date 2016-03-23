@@ -46,3 +46,11 @@ li.ent-item {
   padding: 1rem;
   margin: 2rem;
 }
+
+.drop-form {
+  margin-left: 5%;
+}
+
+input.drop-form {
+  width: 90%;
+}
