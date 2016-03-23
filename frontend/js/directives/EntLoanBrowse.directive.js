@@ -9,7 +9,13 @@ function entBrowse () {
     },
     templateUrl: 'partials/entBrowse.html',
     controller: function($scope){
-      console.log($scope.entrepreneur);
+      // remove this line later when donations are connected
+      $scope.entrepreneur.amount_raised = 50;
+      $scope.selectEnt = selectEnt;
+      function selectEnt (clickedEnt) {
+        console.log(clickedEnt);
+        $scope.currEnt = clickedEnt;
+      }
     }
   };
 }

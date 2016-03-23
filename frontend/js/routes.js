@@ -17,6 +17,10 @@ angular.module('lendingApp')
         templateUrl: 'views/entrepreneurs.html',
         controller: 'EntrepreneursController as EC'
       })
+      .when('entrepreneur', {
+        templateUrl: 'views/entrepreneurProfile.html',
+        controller: 'EntrepreneurProfileController as EPC'
+      })
       .when('/backers', {
         templateUrl: 'views/backers.html',
         controller: 'BackersController as BC'

@@ -1,7 +1,7 @@
 angular.module('lendingApp')
-  .controller('EntrepreneursController', ['getOneEntrepreneurService', 'getEntrepreneursService', EntrepreneursController]);
+  .controller('EntrepreneursController', ['$location', 'getOneEntrepreneurService', 'getEntrepreneursService', EntrepreneursController]);
 
-function EntrepreneursController (getOneEntrepreneurService, getEntrepreneursService) {
+function EntrepreneursController ($location, getOneEntrepreneurService, getEntrepreneursService) {
   var vm = this;
   vm.title = 'Entrepreneur Page';
   vm.subtitle = 'This is the entrepreuner page';
@@ -11,7 +11,4 @@ function EntrepreneursController (getOneEntrepreneurService, getEntrepreneursSer
     vm.allEntrepreneurs = serviceResults.data;
   }
 
-  // function getOneEntrepreneur (id, nextFunc) {
-  //   getOneEntrepreneurService(id, nextFunc);
-  // }
 }
