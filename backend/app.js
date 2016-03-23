@@ -5,6 +5,11 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const passport = require('passport');
+const FacebookStrategy = require('passport-facebook');
+const GoogleStrategy = require('passport-google-oauth');
+
+require('dotenv').load();
 
 const routes = require('./routes');
 
