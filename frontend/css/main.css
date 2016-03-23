@@ -24,10 +24,25 @@ img.profile-img {
   max-width: 200px;
 }
 
+img.main-profile {
+  max-width: 300px;
+}
+
+.ent-profile-dialog {
+  min-width: 80%;
+}
+
+.ent-profile-content {
+  border-radius: 0;
+}
+
 li.ent-item {
   border: black thin solid;
   list-style: none;
   display: inline;
   float: left;
-  max-width: 300px;
+  width: 25rem;
+  height: 50rem;
+  padding: 1rem;
+  margin: 2rem;
 }

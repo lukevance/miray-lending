@@ -1,7 +1,58 @@
 <div class="entBox">
-<img class="profile-img" src="{{entrepreneur.image_url}}" alt="" />
-<h3>{{entrepreneur.name}}</h3>
-<p>
-  {{entrepreneur.bio}}
-</p>
+  <img class="profile-img" src="{{entrepreneur.image_url}}" alt="" />
+  <h3>{{entrepreneur.name}}</h3>
+  <p>
+    {{entrepreneur.loans[0].description}}
+  </p>
+  <h5>Loan Amount: {{entrepreneur.loans[0].amount}}</h5>
+  <h5>Raised Amount: {{entrepreneur.amount_raised}}</h5>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#entModal{{entrepreneur.id}}">
+  Read More
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="entModal{{entrepreneur.id}}" tabindex="-1" role="dialog" aria-labelledby="entModalLabel{{entrepreneur.id}}">
+  <div class="modal-dialog ent-profile-dialog" role="document">
+    <div class="modal-content ent-profile-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="entModalLabel{{entrepreneur.id}}">{{entrepreneur.name}}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{{entrepreneur.image_url}}" alt="" class="main-profile"/>
+          </div>
+          <div class="col-md-6">
+            <p>
+              {{entrepreneur.bio}}
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 style="text-align: center;">Loan Info</h4>
+          </div>
+        </div>
+        <div class="row" style="border-top: thin black solid;">
+          <div class="col-md-6">
+            <h5>Loan Amount: {{entrepreneur.loans[0].amount}}</h5>
+
+          </div>
+          <div class="col-md-6">
+            <p>
+              {{entrepreneur.loans[0].description}}
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+        <button type="button" class="btn btn-primary">Donate Now</button>
+      </div>
+    </div>
+  </div>
 </div>
