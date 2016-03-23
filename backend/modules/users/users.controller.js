@@ -46,6 +46,7 @@ function create (req, res) {
 }
 
 function update (req, res) {
+  console.log('user: ' + req.body.email + ' is trying to change their info');
   // check for authorization
   // admin credentials?
   // email from jwt matches email in user?

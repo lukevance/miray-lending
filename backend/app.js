@@ -6,7 +6,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const expressJwt = require('express-jwt');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook');
 const GoogleStrategy = require('passport-google-oauth');
@@ -18,7 +18,15 @@ const routes = require('./routes');
 const app = express();
 
 // choose routes to protect
-app.use('/api', expressJwt({secret: 'supersecret-secret'}));
+app.use('/user/update', expressJwt({secret: 'supersecret-secret'}));
+app.use('/user/del', expressJwt({secret: 'supersecret-secret'}));
+app.use('/borrower/new', expressJwt({secret: 'supersecret-secret'}));
+app.use('/borrower/update', expressJwt({secret: 'supersecret-secret'}));
+app.use('/borrower/del', expressJwt({secret: 'supersecret-secret'}));
+app.use('/loan/new', expressJwt({secret: 'supersecret-secret'}));
+app.use('/loan/del', expressJwt({secret: 'supersecret-secret'}));
+app.use('/pay/new', expressJwt({secret: 'supersecret-secret'}));
+
 
 // initialize jwt
 // app.use(express.json());
