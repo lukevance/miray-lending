@@ -55,6 +55,10 @@ li.ent-item {
   margin-left: 5%;
 }
 
+.background-section {
+  background-image: url('/images/main-background.JPG');
+}
+
 input.drop-form {
   width: 90%;
 }

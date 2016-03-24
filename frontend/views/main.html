@@ -1,16 +1,16 @@
-<div class="container" style="padding-top: 10%">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <h1>{{ MC.title }}</h1>
-      <h3>{{MC.subtitle}}</h3>
+<div class="container-fluid" style="padding-top: 10%">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+        <h1>{{ MC.title }}</h1>
+        <h3>{{MC.subtitle}}</h3>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-6 col-md-offset-6">
-      <p>{{MC.introParagraph}}</p>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6">
+        <p>{{MC.introParagraph}}</p>
+      </div>
     </div>
-  </div>
 
   <div class="row seperator sectionTitle">
     <div class="col-md-12">
@@ -18,21 +18,13 @@
     </div>
   </div>
   <div class="row entBrowser">
-    <div class="col-md-4" ng-repeat="entrepreneur in MC.entrepreneurs">
-
-      <div class="row">
-        <div class="col-md-6">
-          <span>picture: {{entrepreneur.pic}}</span>
-          <h5>Name: {{entrepreneur.name}}</h5>
-          <p>
-            Bio: {{entrepreneur.bio}}
-          </p>
-        </div>
-        <div class="col-md-6">
-
-        </div>
-      </div>
-
+    <div class="col-md-12">
+      <ul class="ent-item">
+        <li class="ent-item" ng-repeat="entrepreneur in MC.featuredEnts">
+          <ent-browse entrepreneur="entrepreneur">
+          </ent-browse>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

@@ -11,6 +11,31 @@ function MainController (getEntrepreneursService) {
 
   function saveEntrepreneurs (allEntrprns) {
     vm.entrepreneurs = allEntrprns.data;
+    vm.featuredEnts = shufflePick3(allEntrprns.data);
+  }
+  // define function to pick 3 random entrepreneurs from main array;
+  function shufflePick3(array) {
+    var newArray = array;
+    var currentIndex = newArray.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = newArray[currentIndex];
+      newArray[currentIndex] = newArray[randomIndex];
+      newArray[randomIndex] = temporaryValue;
+    }
+    var firstThree = [];
+    for (var i = 0; i < 3; i++) {
+      firstThree.push(array[i]);
+    }
+
+    return firstThree;
   }
 
   // get active loans service
