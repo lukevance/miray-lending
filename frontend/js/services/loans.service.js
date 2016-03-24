@@ -1,6 +1,7 @@
 angular.module('lendingApp')
   .service('getLoanPlansService', ['$http', getLoanPlansService])
-  .service('newLoanService', ['$http', newLoanService]);
+  .service('newLoanService', ['$http', newLoanService])
+  .service('getLoanService', ['$http', getLoanService]);
 
   function newLoanService ($http) {
     return function (loanObj, nextFunc) {
@@ -16,6 +17,15 @@ angular.module('lendingApp')
       return $http.get('//localhost:3000/loan/plans')
       .then(function(loanPlans){
         nextFunc(loanPlans.data);
+      });
+    };
+  }
+
+  function getLoanService ($http) {
+    return function (loanID, nextFunc) {
+      return $http.get('//localhost:3000/loan/' + loanID)
+      .then(function(loanInfo){
+        nextFunc(loanInfo.data);
       });
     };
   }

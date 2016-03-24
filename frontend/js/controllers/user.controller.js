@@ -1,20 +1,24 @@
 angular.module('lendingApp')
-  .controller('UserController', ['getUserService', UserController]);
+  .controller('UserController', ['getLoanService', 'getUserService', UserController]);
 
-function UserController (getUserService) {
+function UserController (getLoanService, getUserService) {
   var vm = this;
   // find current user ID
   vm.userID = 1;
   // get user info from server using ID
   getUserService(vm.userID, storeUser);
   // get loan info using donation info
-
-  // get entrepreneur info using loan info
-
-
-
   function storeUser(userData) {
     vm.profile = userData;
-    getLoa
+    userData.donations.forEach(function(val){
+      getLoanService(val.loan_id, storeLoan);
+    });
   }
+  // get entrepreneur info using loan info
+  function storeLoan (loanData) {
+    console.log(loanData);
+  }
+
+
+
 }
