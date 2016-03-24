@@ -17,9 +17,9 @@ angular.module('lendingApp')
         templateUrl: 'views/entrepreneurs.html',
         controller: 'EntrepreneursController as EC'
       })
-      .when('entrepreneur', {
-        templateUrl: 'views/entrepreneurProfile.html',
-        controller: 'EntrepreneurProfileController as EPC'
+      .when('/mydashboard', {
+        templateUrl: 'views/userProfile.html',
+        controller: 'UserController as UC'
       })
       .when('/backers', {
         templateUrl: 'views/backers.html',
@@ -28,5 +28,10 @@ angular.module('lendingApp')
       .when('/admin', {
         templateUrl: 'views/admin.html',
         controller: 'AdminController as ADC'
-      });
+      })
+      .when('/404', {
+        templateUrl: 'views/404.html',
+        controller: 'ErrorController as ERC'
+      })
+      .otherwise({redirectTo: '/404'});
   });
