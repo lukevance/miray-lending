@@ -17,21 +17,38 @@ const routes = require('./routes');
 
 const app = express();
 
-passport.use(new FacebookStrategy({
-    clientID: process.env.Passport_FB_ID,
-    clientSecret: process.env.Passport_FB_Secret,
-    callbackURL: "http://localhost:3000/auth/facebook/return"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    return cb(profile);
-  }
-));
-
 // Initialize Passport and restore authentication state, if any, from the
 // session.
 app.use(passport.initialize());
 app.use(passport.session());
+
+passport.use(new FacebookStrategy({
+    clientID: process.env.Passport_FB_ID,
+    clientSecret: process.env.Passport_FB_Secret,
+    callbackURL: "http://localhost:3000/auth/facebook/return",
+    profileFields: ['id', 'displayName', 'email']
+  },
+  function(accessToken, refreshToken, profile, done) {
+    // check database here to see if profile.email = email in our databases
+    var user = {
+      name: profile.displayName,
+      id: profile.id,
+      email: profile.email,
+      token: accessToken
+    };
+    // create or
+    console.log(user);
+    return done(null, user);
+  }
+));
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+passport.deserializeUser(function(obj, done){
+  done(null, obj);
+});
+
 
 // choose routes to protect
 app.use('/user/update', expressJwt({secret: process.env.JWT_Secret}));
