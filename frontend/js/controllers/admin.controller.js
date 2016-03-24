@@ -5,5 +5,11 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
   var vm = this;
   vm.title = 'Admin Page';
   vm.subtitle = 'welcome to the admin page - this page needs authorization';
+  getGroupService(saveGroups);
 
+  function saveGroups (groupInfo) {
+    vm.groups = groupInfo;
+    console.log(groupInfo);
+    // get borrower info from loan
+  }
 }

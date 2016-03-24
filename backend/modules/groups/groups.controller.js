@@ -21,6 +21,7 @@ function create(req, res) {
 function getAll (req, res) {
   req.models.loan_groups
   .find()
+  .populate('loans')
   .exec(function(err, groupsData){
     if (err) {
       return res.json({error: err}, 500);

@@ -13,7 +13,36 @@
 
     <div class="col-md-9">
       <div class="main-admin-dash">
-
+        <div class="group-section" ng-repeat="group in ADC.groups">
+          <h1>{{group.name}}</h1>
+          <h3>{{group.city}}</h3>
+          <table class="table">
+            <tr>
+              <th>Name</th>
+              <th>Loan Amount</th>
+              <th>Amount Raised</th>
+              <th>Balance</th>
+              <th># of Payments</th>
+              <th>Interest Paid</th>
+            </tr>
+            <tr>
+              <td>Group Total</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr ng-repeat="loan in group.loans">
+              <td>{{loan.borrower_id}}</td>
+              <td>{{loan.amount}}</td>
+              <td></td>
+              <td>{{loan.balance}}</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div> <!-- end of row -->
