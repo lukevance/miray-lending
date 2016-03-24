@@ -20,6 +20,7 @@ function getById (req, res) {
   .find()
   .where({id: req.params.id})
   .limit(1)
+  .populate('donations')
   .exec(function(err, userData){
     if (err) {
       return res.json({error: err}, 500);

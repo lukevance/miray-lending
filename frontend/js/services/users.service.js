@@ -29,7 +29,7 @@ function getUserService ($http){
       if (err) {
         throw err;
       } else {
-        nextFunc(userData);
+        nextFunc(userData.data[0]);
       }
     })
     .catch(function(err){

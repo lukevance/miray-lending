@@ -9,10 +9,10 @@ function navbarMiray (userSigninService) {
     },
     templateUrl: 'partials/navbar.html',
     controller: function ($scope, $window) {
-      if ($window.sessionStorage.profile) {
-        $scope.userInfo = $window.sessionStorage.profile;
-        console.log($scope.userInfo.name);
-      }
+      // if ($window.sessionStorage.profile) {
+      //   $scope.userInfo = $window.sessionStorage.profile;
+      //   console.log($scope.userInfo.name);
+      // }
       $scope.signinSubmit = signinSubmit;
       function signinSubmit (email, password) {
         var userCred = {email: email, password: password};
