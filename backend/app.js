@@ -8,7 +8,7 @@ const cors = require('cors');
 const expressJwt = require('express-jwt');
 // const jwt = require('jsonwebtoken');
 const passport = require('passport');
-const FacebookStrategy = require('passport-facebook');
+const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth');
 
 require('dotenv').load();
@@ -16,6 +16,22 @@ require('dotenv').load();
 const routes = require('./routes');
 
 const app = express();
+
+passport.use(new FacebookStrategy({
+    clientID: process.env.Passport_FB_ID,
+    clientSecret: process.env.Passport_FB_Secret,
+    callbackURL: "http://localhost:3000/auth/facebook/return"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
+    return cb(profile);
+  }
+));
+
+// Initialize Passport and restore authentication state, if any, from the
+// session.
+app.use(passport.initialize());
+app.use(passport.session());
 
 // choose routes to protect
 app.use('/user/update', expressJwt({secret: process.env.JWT_Secret}));
