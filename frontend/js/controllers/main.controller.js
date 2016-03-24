@@ -10,7 +10,6 @@ function MainController (getEntrepreneursService) {
   getEntrepreneursService(saveEntrepreneurs);
 
   function saveEntrepreneurs (allEntrprns) {
-    console.log(allEntrprns);
     vm.entrepreneurs = allEntrprns.data;
   }
 

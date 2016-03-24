@@ -47,6 +47,10 @@ li.ent-item {
   margin: 2rem;
 }
 
+.drop-container {
+  width: 30rem;
+}
+
 .drop-form {
   margin-left: 5%;
 }
