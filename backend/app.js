@@ -18,14 +18,14 @@ const routes = require('./routes');
 const app = express();
 
 // choose routes to protect
-app.use('/user/update', expressJwt({secret: 'supersecret-secret'}));
-app.use('/user/del', expressJwt({secret: 'supersecret-secret'}));
-app.use('/borrower/new', expressJwt({secret: 'supersecret-secret'}));
-app.use('/borrower/update', expressJwt({secret: 'supersecret-secret'}));
-app.use('/borrower/del', expressJwt({secret: 'supersecret-secret'}));
-app.use('/loan/new', expressJwt({secret: 'supersecret-secret'}));
-app.use('/loan/del', expressJwt({secret: 'supersecret-secret'}));
-app.use('/pay/new', expressJwt({secret: 'supersecret-secret'}));
+app.use('/user/update', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/user/del', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/borrower/new', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/borrower/update', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/borrower/del', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/loan/new', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/loan/del', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/pay/new', expressJwt({secret: process.env.JWT_Secret}));
 
 
 // initialize jwt

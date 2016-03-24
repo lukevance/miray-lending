@@ -1,7 +1,7 @@
 'use strict';
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const secret = 'supersecret-secret';
+const secret = process.env.JWT_Secret;
 
 function login (req, res) {
   let userData = req.body;
@@ -25,8 +25,8 @@ function login (req, res) {
             profile.password = 'hidden';
 
             // setup token with users info and secret
-            let token = jwt.sign(profile, secret, {expiresIn: 60*30});
-            res.json({token: token});
+            let token = jwt.sign(profile, secret, {expiresIn: 60*60*5});
+            res.json({token: token, profile: profile});
           } else {
             res.json({error: 'incorrect credentials'});
           }
