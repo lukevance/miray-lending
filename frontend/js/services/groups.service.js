@@ -15,7 +15,7 @@ function getGroupService ($http) {
   return function (nextFunc) {
     return $http.get('//localhost:3000/group')
     .then(function(allGroups){
-      nextFunc(allGroups);
+      nextFunc(allGroups.data);
     });
   };
 }
