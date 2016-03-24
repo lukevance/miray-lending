@@ -12,7 +12,7 @@ let Donation = Waterline.Collection.extend({
     donor_id: {
       model: 'users'
     },
-    loan_id: {
+    loan: {
       model: 'loans'
     }
   }

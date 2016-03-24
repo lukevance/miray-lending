@@ -5,6 +5,7 @@ function getById (req, res) {
   .find()
   .where({id: req.params.id})
   .limit(1)
+  .populate('loan_id')
   .exec(function(err, donationData) {
     if (err) {
       return res.json({error: err}, 500);
