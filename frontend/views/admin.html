@@ -8,6 +8,9 @@
 
   <div class="row">
     <div class="col-md-3">
+      <h2>Total Loans: ${{ADC.totalLoansAmount}} <b>Ar</b></h2>
+      <h2>Total Payments: ${{ADC.totaPaymentsAmount}} <b>Ar</b></h2>
+      <h2>Total Donated: ${{ADC.totalDonations}} <b>USD</b></h2>
       <admin-create></admin-create>
     </div> <!-- end of side col -->
 
@@ -16,6 +19,7 @@
         <div class="group-section" ng-repeat="group in ADC.groups">
           <h1>{{group.name}}</h1>
           <h3>{{group.city}}</h3>
+          <h3>{{group.region}}</h3>
           <table class="table">
             <tr>
               <th>Name</th>
@@ -27,17 +31,17 @@
             </tr>
             <tr>
               <td>Group Total</td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{{group.groupAmount}}</td>
+              <td>{{group.groupDonations}}</td>
+              <td>{{group.groupAmount - group.groupPayments}}</td>
               <td></td>
               <td></td>
             </tr>
             <tr ng-repeat="loan in group.loans">
-              <td>{{loan.borrower_id}}</td>
+              <td>{{loan.borrower.name}}</td>
               <td>{{loan.amount}}</td>
               <td></td>
-              <td>{{loan.balance}}</td>
+              <td>{{loan.amount - loan.totalPayments}}</td>
               <td></td>
               <td></td>
             </tr>
