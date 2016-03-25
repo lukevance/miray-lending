@@ -35,7 +35,7 @@ router.get('/seed', function(req, res){
     loan_plans: []
   };
   // seed groups
-  seedData.groups.forEach(function(val){
+  seedData.groups.forEach(function(val, indx, array){
     req.models.groups
     .create(val)
     .exec(function(err, newGroup){
@@ -44,13 +44,15 @@ router.get('/seed', function(req, res){
       } else {
         data.groups.push(newGroup);
         console.log('groups success');
+      }
+      if (indx === (array.length - 1)) {
         seedBorrowers();
       }
     });
   });
   // seed borrowerRoutes
   function seedBorrowers () {
-  seedData.borrowers.forEach(function(val){
+  seedData.borrowers.forEach(function(val, indx, array){
     req.models.borrowers
     .create(val)
     .exec(function(err, newBorrower){
@@ -59,6 +61,8 @@ router.get('/seed', function(req, res){
       } else {
         data.borrowers.push(newBorrower);
         console.log('borrower success');
+      }
+      if (indx === (array.length - 1)) {
         seedLoans();
       }
     });
@@ -67,7 +71,7 @@ router.get('/seed', function(req, res){
   // seed loans
 function seedLoans() {
   console.log('loans started');
-  seedData.loans.forEach(function(val){
+  seedData.loans.forEach(function(val, indx, array){
     req.models.loans
     .create(val)
     .exec(function(err, newLoan){
@@ -75,6 +79,8 @@ function seedLoans() {
         return res.json({error: err}, 500);
       } else {
         data.loans.push(newLoan);
+      }
+      if (indx === (array.length - 1)) {
         seedPayments();
       }
     });
@@ -82,7 +88,7 @@ function seedLoans() {
 }
   // seed payments
 function seedPayments () {
-  seedData.payments.forEach(function(val){
+  seedData.payments.forEach(function(val, indx, array){
     req.models.payments
     .create(val)
     .exec(function(err, newPayment){
@@ -90,6 +96,8 @@ function seedPayments () {
         return res.json({error: err}, 500);
       } else {
         data.payments.push(newPayment);
+      }
+      if (indx === (array.length - 1)) {
         seedUsers();
       }
     });
@@ -97,7 +105,7 @@ function seedPayments () {
 }
   // seed users
 function seedUsers () {
-  seedData.users.forEach(function(val){
+  seedData.users.forEach(function(val, indx, array){
     req.models.users
     .create(val)
     .exec(function(err, newUser){
@@ -105,6 +113,8 @@ function seedUsers () {
         return res.json({error: err}, 500);
       } else {
         data.users.push(newUser);
+      }
+      if (indx === (array.length - 1)) {
         seedDonations();
       }
     });
@@ -112,7 +122,7 @@ function seedUsers () {
 }
   // seed donations
 function seedDonations () {
-  seedData.donations.forEach(function(val){
+  seedData.donations.forEach(function(val, indx, array){
     req.models.donations
     .create(val)
     .exec(function(err, newDonation){
@@ -120,6 +130,8 @@ function seedDonations () {
         return res.json({error: err}, 500);
       } else {
         data.donations.push(newDonation);
+      }
+      if (indx === (array.length - 1)) {
         endIt();
       }
     });
