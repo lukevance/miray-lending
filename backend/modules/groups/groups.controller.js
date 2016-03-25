@@ -41,6 +41,7 @@ function getAll (req, res) {
   .exec(function(err, groupsData){
     if (err) {
       return res.json({error: err}, 500);
+      // console.log(err);
     } else {
       var newObj = {};
       groupsData.forEach(function(val){
@@ -59,15 +60,16 @@ function getAll (req, res) {
         }, function (errFromMap, results) {
           if (errFromMap) {
             return res.json(errFromMap);
+            // console.log(errFromMap);
           } else {
 
               newObj.group = groupsData;
               newObj.bonus = results;
-
+              console.log(results);
+              res.json(newObj);
           }
         });
       });
-      res.json(newObj);
     }
   });
 }
