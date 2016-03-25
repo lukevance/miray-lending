@@ -32,7 +32,7 @@ let Loan = Waterline.Collection.extend({
       model: 'borrowers'
     },
     group: {
-      model: 'loan_groups'
+      model: 'groups'
     }
   }
 });

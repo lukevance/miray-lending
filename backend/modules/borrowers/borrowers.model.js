@@ -25,14 +25,11 @@ let Borrower = Waterline.Collection.extend({
 
     loans: {
       collection: 'loans',
-      via: 'borrower_id'
+      via: 'borrower'
     },
     payments: {
       collection: 'payments',
-      via: 'borrower_id'
-    },
-    group: {
-      model: 'loan_groups'
+      via: 'borrower'
     }
   }
 });
