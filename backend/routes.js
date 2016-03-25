@@ -43,7 +43,6 @@ router.get('/seed', function(req, res){
         return res.json({error: err}, 500);
       } else {
         data.groups.push(newGroup);
-        console.log('groups success');
       }
       if (indx === (array.length - 1)) {
         seedBorrowers();
@@ -60,7 +59,6 @@ router.get('/seed', function(req, res){
         return res.json({error: err}, 500);
       } else {
         data.borrowers.push(newBorrower);
-        console.log('borrower success');
       }
       if (indx === (array.length - 1)) {
         seedLoans();
@@ -70,7 +68,6 @@ router.get('/seed', function(req, res){
 }
   // seed loans
 function seedLoans() {
-  console.log('loans started');
   seedData.loans.forEach(function(val, indx, array){
     req.models.loans
     .create(val)
@@ -140,7 +137,6 @@ function seedDonations () {
 
 
   function endIt () {
-    console.log('heyyy');
     res.json(data);
   }
 });
