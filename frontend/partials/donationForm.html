@@ -1,0 +1,23 @@
+<div class="create-donation">
+  <h4 ng-click="activateGroup()">Donate to this Loan</h4>
+  <form ng-show="groupActive">
+    <div class="form-group">
+      <label for="groupName">Group Name</label>
+      <input type="text" class="form-control" id="groupName" placeholder="Name" ng-model="groupForm.name">
+    </div>
+    <div class="form-group">
+      <label for="officerName">Loan Officer Name</label>
+      <input type="text" class="form-control" id="officerName" placeholder="Officer" ng-model="groupForm.officerName">
+    </div>
+    <div class="form-group">
+      <label for="groupCity">City</label>
+      <input type="text" class="form-control" id="groupCity" placeholder="City" ng-model="groupForm.city">
+    </div>
+    <div class="form-group">
+      <label for="groupRegion">Region</label>
+      <input type="text" class="form-control" id="groupRegion" placeholder="Region" ng-model="groupForm.region">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="submitForm($event, validGroup, groupForm)">Submit</button>
+    <button type="button" class="btn btn-classic" ng-click="clearForm('group')">Cancel</button>
+  </form>
+</div>
