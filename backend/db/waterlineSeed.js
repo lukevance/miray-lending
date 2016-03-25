@@ -49,30 +49,6 @@ module.exports = {
       city: '',
       region: '',
       group: ''
-    },
-    {
-      name: 'Jean Pierre',
-      bio: '',
-      dob: '',
-      id_num_national: '',
-      image_url: '',
-      phone: '',
-      address: '',
-      city: '',
-      region: '',
-      group: ''
-    },
-    {
-      name: 'Victor',
-      bio: '',
-      dob: '',
-      id_num_national: '',
-      image_url: '',
-      phone: '',
-      address: '',
-      city: '',
-      region: '',
-      group: ''
     }
   ],
   loans: [
@@ -165,17 +141,36 @@ module.exports = {
   ],
   users: [
     {
-      name: '',
-      email: '',
-      password: '',
-      role: ''
+      name: 'Luke Vance',
+      email: 'lukevance@myemail.com',
+      password: '$2a$08$ziJXJ/9TMfj6uMCp6Xysn.c87JsbaErHDLE8k/S4vBU6Z6xUHmAVe',
+      role: 'donor'
+    },
+    {
+      name: 'Jack Johnson',
+      email: 'jackyJ@dubey.com',
+      password: '$2a$08$ziJXJ/9TMfj6uMCp6Xysn.c87JsbaErHDLE8k/S4vBU6Z6xUHmAVe',
+      role: 'donor'
     }
   ],
   donations: [
     {
-      amount: '',
-      donor: '',
-      loan: ''
+      amount: 50,
+      donor: 1,
+      loan: 1,
+      date: '2016-03-15'
+    },
+    {
+      amount: 35,
+      donor: 1,
+      loan: 2,
+      date: '2016-02-15'
+    },
+    {
+      amount: 70,
+      donor: 1,
+      loan: 3,
+      date: '2016-01-15'
     }
   ],
   loan_plans: [
