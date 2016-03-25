@@ -7,6 +7,12 @@ let Borrower = Waterline.Collection.extend({
   connection: 'myLocalPostgres',
 
   attributes: {
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true,
+      unique: true
+    },
     name: 'string',
     bio: 'text',
     dob: 'date',
