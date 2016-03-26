@@ -155,19 +155,19 @@ module.exports = {
   ],
   donations: [
     {
-      amount: 50,
+      amount: 25000,
       donor: 1,
       loan: 1,
       date: '2016-03-15'
     },
     {
-      amount: 35,
+      amount: 35000,
       donor: 1,
       loan: 2,
       date: '2016-02-15'
     },
     {
-      amount: 70,
+      amount: 17000,
       donor: 1,
       loan: 3,
       date: '2016-01-15'

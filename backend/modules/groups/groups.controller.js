@@ -109,6 +109,7 @@ function getAllAdmin (req, res) {
   });
 }
 
+// utility functions
 function copy(object) {
   var new_object = {};
   for (var key in object) {
