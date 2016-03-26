@@ -5,6 +5,7 @@ var knex = require('../../db/knex');
 function getById (req, res) {
   req.models.loans
   .find({id: req.params.id})
+  .populate('borrower')
   .exec(function(err, loanData) {
     if (err) {
       return res.json({error: err}, 500);
