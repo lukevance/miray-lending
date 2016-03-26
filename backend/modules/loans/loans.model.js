@@ -7,7 +7,12 @@ let Loan = Waterline.Collection.extend({
   connection: 'myLocalPostgres',
 
   attributes: {
-    // borrower_id: 'integer',
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true,
+      unique: true
+    },
     amount: 'integer',
     balance: 'integer',
     rate_plan_id: 'integer',
@@ -21,13 +26,13 @@ let Loan = Waterline.Collection.extend({
     },
     payments: {
       collection: 'payments',
-      via: 'loan_id'
+      via: 'loan'
     },
-    borrower_id: {
+    borrower: {
       model: 'borrowers'
     },
-    group_id: {
-      model: 'loan_groups'
+    group: {
+      model: 'groups'
     }
   }
 });

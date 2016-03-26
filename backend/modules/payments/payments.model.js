@@ -7,12 +7,19 @@ let Payment = Waterline.Collection.extend({
   connection: 'myLocalPostgres',
 
   attributes: {
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true,
+      unique: true
+    },
     amount: 'integer',
+    date: 'date',
 
-    borrower_id: {
+    borrower: {
       model: 'borrowers'
     },
-    loan_id: {
+    loan: {
       model: 'loans'
     }
   }

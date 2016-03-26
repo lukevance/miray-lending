@@ -7,13 +7,20 @@ var User = Waterline.Collection.extend({
   connection: 'myLocalPostgres',
 
   attributes: {
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true,
+      unique: true
+    },
     name:
       {
         type: 'string'
       },
     email: {
-      type: 'email',
-      required: true
+      type: 'string',
+      required: true,
+      unique: true
     },
     password: {
       type: 'string'
@@ -22,7 +29,7 @@ var User = Waterline.Collection.extend({
 
     donations: {
       collection: 'donations',
-      via : 'donor_id'
+      via : 'donor'
     }
   }
 });

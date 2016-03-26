@@ -3,10 +3,16 @@
 const Waterline = require('waterline');
 
 let Group = Waterline.Collection.extend({
-  identity: 'loan_groups',
+  identity: 'groups',
   connection: 'myLocalPostgres',
 
   attributes: {
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true,
+      unique: true
+    },
     name: 'string',
     officer_id: 'integer',
     city: 'string',
@@ -14,7 +20,7 @@ let Group = Waterline.Collection.extend({
 
     loans: {
       collection: 'loans',
-      via: 'group_id'
+      via: 'group'
     }
   }
 });

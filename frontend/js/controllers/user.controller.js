@@ -11,7 +11,7 @@ function UserController (getLoanService, getUserService) {
   function storeUser(userData) {
     vm.profile = userData;
     userData.donations.forEach(function(val){
-      getLoanService(val.loan_id, storeLoan);
+      getLoanService(val.loan, storeLoan);
     });
   }
   // get entrepreneur info using loan info
