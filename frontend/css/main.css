@@ -62,3 +62,7 @@ li.ent-item {
 input.drop-form {
   width: 90%;
 }
+
+.donation-card {
+  border: solid black thin;
+}

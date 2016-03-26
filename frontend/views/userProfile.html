@@ -19,9 +19,23 @@
     </div> <!-- end of main col -->
     <div class="col-md-8">
       <div class="main-user-component">
-        <pre>
-          {{UC.profile}}
-        </pre>
+        <div class="donation-card" ng-repeat="donation in UC.profile.donations">
+          <div class="row">
+            <div class="col-md-8">
+              <h3>{{donation.loan.borrower.name}}</h3>
+              <h4>{{donation.loan.borrower.image_url}}</h4>
+              <p>
+                {{donation.loan.description}}
+              </p>
+            </div>
+            <div class="col-md-4">
+              <h5>Donated: {{donation.amount}}</h5>
+              <h5>Paid Back: {{donation.loan.paymentForDonor}}</h5>
+              <h5>Total loan: {{donation.loan.amount}}</h5>
+              <h5>Payments made: {{donation.loan.payments.length}}</h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div> <!-- end of main col -->
   </div> <!-- end of row -->
