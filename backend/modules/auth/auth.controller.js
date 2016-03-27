@@ -21,12 +21,16 @@ function login (req, res) {
         } else {
           if (response === true) {
             // send user profile without password
-            let profile = userInfo[0];
-            profile.password = 'hidden';
+            let profile = {
+              id: userInfo[0].id,
+              name: userInfo[0].name,
+              email: userInfo[0].email,
+              role: userInfo[0].role
+            };
 
             // setup token with users info and secret
             let token = jwt.sign(profile, secret, {expiresIn: 60*60*5});
-            res.json({token: token, profile: profile});
+            res.json({token: token});
           } else {
             res.json({error: 'incorrect credentials'});
           }

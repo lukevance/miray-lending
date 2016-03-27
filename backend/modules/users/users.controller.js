@@ -1,6 +1,8 @@
 'use strict';
 
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const secret = process.env.JWT_Secret;
 
 function getAll (req, res) {
   req.models.users
@@ -32,6 +34,7 @@ function getById (req, res) {
 
 function create (req, res) {
   let newUserObj = req.body;
+  newUserObj.role = 'donor';
   bcrypt.hash(req.body.password, 8, function(err, hash) {
     newUserObj.password = hash;
     req.models.users
@@ -40,7 +43,15 @@ function create (req, res) {
       if (err) {
         return res.json({error: err}, 500);
       } else {
-        res.json(userMade);
+        console.log(userMade);
+        let profile = {
+          id: userMade.id,
+          name: userMade.name,
+          email: userMade.email,
+          role: userMade.role
+        };
+        let token = jwt.sign(profile, secret, {expiresIn: 60*3});
+        res.json({token: token});
       }
     });
   });

@@ -49,7 +49,6 @@ function getAllAdmin (req, res) {
       var endOfLoans = allLoans.length;
       var count = 0;
       allLoans.forEach(function(loan){
-        console.log(loan);
         var id = loan.group.id;
         if (groupedLoansObj[id]) {
           // if group obj already exists
@@ -93,7 +92,6 @@ function getAllAdmin (req, res) {
           // add group totals to allTotal
           for (var key in groupedLoansObj) {
             if (groupedLoansObj[key].hasOwnProperty('loans')) {
-              console.log(groupedLoansObj[key]);
               groupedLoansObj.totalAmount += groupedLoansObj[key].groupAmount;
               groupedLoansObj.totalPayments += groupedLoansObj[key].groupPayments;
               groupedLoansObj.totalDonations += groupedLoansObj[key].groupDonations;
