@@ -48,7 +48,7 @@ li.ent-item {
 }
 
 .drop-container {
-  width: 30rem;
+  min-width: 25rem;
 }
 
 .drop-form {
