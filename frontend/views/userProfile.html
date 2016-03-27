@@ -1,43 +1,57 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <p>
-        Main header: buttons for arranging loans 'active' 'raising' 'all' 'sort by'
-      </p>
-    </div>
-  </div> <!-- end of row -->
-
-  <div class="row">
-    <div class="col-md-4">
-      <div class="user-sidebar">
-        <h2>Summary</h2>
-        <h4>{{UC.profile.name}}</h4>
-        <pre>
-          {{UC.profile.donations}}
-        </pre>
+  <div class="userPage" ng-show="UC.userInfo">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Main header: buttons for arranging loans 'active' 'raising' 'all' 'sort by'
+        </p>
       </div>
-    </div> <!-- end of main col -->
-    <div class="col-md-8">
-      <div class="main-user-component">
-        <div class="donation-card" ng-repeat="donation in UC.profile.donations">
-          <div class="row">
-            <div class="col-md-8">
-              <h3>{{donation.loan.borrower.name}}</h3>
-              <h4>{{donation.loan.borrower.image_url}}</h4>
-              <p>
-                {{donation.loan.description}}
-              </p>
-            </div>
-            <div class="col-md-4">
-              <h5>Donated: {{donation.amount}}</h5>
-              <h5>Paid Back: {{donation.loan.paymentForDonor}}</h5>
-              <h5>Total loan: {{donation.loan.amount}}</h5>
-              <h5>Payments made: {{donation.loan.payments.length}}</h5>
+    </div> <!-- end of row -->
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="user-sidebar">
+          <h2>Summary</h2>
+          <h4>{{UC.profile.name}}</h4>
+          <pre>
+            {{UC.profile.donations}}
+          </pre>
+        </div>
+      </div> <!-- end of main col -->
+      <div class="col-md-8">
+        <div class="main-user-component">
+          <div class="donation-card" ng-repeat="donation in UC.profile.donations">
+            <div class="row">
+              <div class="col-md-8">
+                <h3>{{donation.loan.borrower.name}}</h3>
+                <h4>{{donation.loan.borrower.image_url}}</h4>
+                <p>
+                  {{donation.loan.description}}
+                </p>
+              </div>
+              <div class="col-md-4">
+                <h5>Donated: {{donation.amount}}</h5>
+                <h5>Paid Back: {{donation.loan.paymentForDonor}}</h5>
+                <h5>Total loan: {{donation.loan.amount}}</h5>
+                <h5>Payments made: {{donation.loan.payments.length}}</h5>
+              </div>
             </div>
           </div>
         </div>
+      </div> <!-- end of main col -->
+    </div> <!-- end of row -->
+  </div> <!-- end of profile page -->
+
+  <div class="errorSection" ng-hide="UC.userInfo">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Oops...</h1>
+        <h3>401 Unauthorized Access</h3>
+        <p>
+          We're not sure how you got here, but you need to be logged in to be here.
+        </p>
       </div>
-    </div> <!-- end of main col -->
-  </div> <!-- end of row -->
+    </div>
+  </div>
 
 </div> <!-- end of container -->
