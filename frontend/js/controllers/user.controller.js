@@ -1,16 +1,15 @@
 angular.module('lendingApp')
-  .controller('UserController', ['$window','getLoanForDonorService', 'getUserService', UserController]);
+  .controller('UserController', ['$window','getLoanForDonorService', 'getUserProfileService', UserController]);
 
-function UserController ($window, getLoanForDonorService, getUserService) {
+function UserController ($window, getLoanForDonorService, getUserProfileService) {
   var vm = this;
   // check to see if user is logged in
   if ($window.localStorage.token) {
     // find current user ID
     vm.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
-    console.log(vm.userInfo.id);
-
+    var bogus = 2;
     // get user info from server using ID
-    getUserService(vm.userInfo.id, storeUser);
+    getUserProfileService(bogus, storeUser);
 
   } else {
     $window.location.href('/#/');

@@ -1,6 +1,7 @@
 angular.module('lendingApp')
   .service('newUserService', ['$http', newUserService])
   .service('getUserService', ['$http', getUserService])
+  .service('getUserProfileService', ['$http', getUserProfileService])
   .service('editUserService', ['$http', editUserService]);
 
 function newUserService($http){
@@ -25,6 +26,23 @@ function getUserService ($http){
   // get user info from API
   return function (userID, nextFunc) {
     return $http.get('//localhost:3000/user/' + userID)
+    .then(function(userData, err){
+      if (err) {
+        throw err;
+      } else {
+        nextFunc(userData.data[0]);
+      }
+    })
+    .catch(function(err){
+      console.log(err);
+    });
+  };
+}
+
+function getUserProfileService ($http){
+  // get user info from API
+  return function (userID, nextFunc) {
+    return $http.get('//localhost:3000/user/profile/' + userID)
     .then(function(userData, err){
       if (err) {
         throw err;
