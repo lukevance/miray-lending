@@ -7,9 +7,8 @@ function UserController ($window, getLoanForDonorService, getUserProfileService)
   if ($window.localStorage.token) {
     // find current user ID
     vm.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
-    var bogus = 2;
     // get user info from server using ID
-    getUserProfileService(bogus, storeUser);
+    getUserProfileService(vm.userInfo.id, storeUser);
 
   } else {
     $window.location.href('/#/');

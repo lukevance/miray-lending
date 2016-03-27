@@ -55,6 +55,7 @@
 
         <div class="row signin-form" ng-show="signinActive">
           <div class="col-md-12">
+            <h3>Sign in first to fund this loan.</h3>
             <form>
               <div class="form-group">
                 <label for="signinEmail">Email</label>
@@ -81,8 +82,8 @@
                 <label for="paymentType">Payment Type</label>
                 <input type="text" class="form-control" id="paymentType" ng-model="paymentType">
               </div>
-              <button class="btn btn-default btn-primary" type="button" name="signinBtn" ng-click="signinSubmit(email, password)">Signin</button>
-              <button class="btn btn-default" type="button" name="cancelBtn" ng-click="email=''; password='';">Cancel</button>
+              <button class="btn btn-default btn-primary" type="button" name="signinBtn" data-dismiss="modal" ng-click="submitPayment(donationAmount, entrepreneur.loans[0].id)">Fund</button>
+              <button class="btn btn-default" type="button" name="cancelBtn" data-dismiss="modal" ng-click="donationAmount=''; paymentType='';">Cancel</button>
             </form>
           </div>
         </div>

@@ -17,7 +17,6 @@ function getById (req, res) {
 
 function create (req, res) {
   var donationInfo = req.body;
-  donationInfo.donor = req.body.donor_id;
   req.models.donations
   .create(donationInfo)
   .exec(function(err, newDonation) {

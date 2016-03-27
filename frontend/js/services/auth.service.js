@@ -10,7 +10,7 @@ function userSigninService ($http, $window) {
     })
     .catch(function(err){
       console.log(err);
-      delete $window.sessionStorage.token;
+      delete $window.localStorage.token;
     });
   };
 }
