@@ -1,8 +1,8 @@
 angular.module('lendingApp')
-  .controller('SignupController', ['newUserService', SignupController]);
+  .controller('SignupController', ['$window', 'newUserService', SignupController]);
 
 
-function SignupController (newUserService) {
+function SignupController ($window, newUserService) {
   var vm = this;
   vm.something = '';
   vm.submitUser = submitUser;
@@ -15,9 +15,10 @@ function SignupController (newUserService) {
     newUserService(vm.newUser, vm.successMessage);
   }
 
-  function successMessage (userObj) {
+  function successMessage (response) {
     newUserClear();
-    console.log('user created: ' + userObj);
+    $window.localStorage.token = response.data.token;
+
   }
 
   function newUserClear() {

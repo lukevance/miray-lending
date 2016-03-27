@@ -18,8 +18,8 @@ function navbarMiray (userSigninService) {
         var userCred = {email: email, password: password};
         userSigninService(userCred, function(response){
           console.log(response);
-          $window.sessionStorage.profile = response.data.profile;
-          $window.sessionStorage.token = response.data.token;
+          // console.log(window.atob(response.data.token.split('.')[1]));
+          $window.localStorage.token = response.data.token;
         });
       }
 

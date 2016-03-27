@@ -1,4 +1,4 @@
-angular.module('lendingApp', ['ngRoute'])
+angular.module('lendingApp', ['ngRoute', 'angular-jwt'])
   .config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
   });
