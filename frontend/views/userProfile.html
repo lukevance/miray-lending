@@ -1,18 +1,18 @@
 <div class="container-fluid">
   <div class="userPage" ng-show="UC.userInfo">
-    <div class="row">
-      <div class="col-md-12">
-        <p>
-          Main header: buttons for arranging loans 'active' 'raising' 'all' 'sort by'
-        </p>
-      </div>
-    </div> <!-- end of row -->
 
     <div class="row">
       <div class="col-md-4">
         <div class="user-sidebar">
-          <h2>Summary</h2>
-          <h4>{{UC.profile.name}}</h4>
+          <h2>My Dashboard</h2>
+          <h3>{{UC.profile.name}}</h3>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Account Balance: {{UC.balance}}</h4>
+              <h4>Total Funded: {{UC.totalFunded}}</h4>
+              <h4>Amount Out: {{UC.amountOut}}</h4>
+            </div>
+          </div>
           <pre>
             {{UC.profile.donations}}
           </pre>
@@ -20,23 +20,31 @@
       </div> <!-- end of main col -->
       <div class="col-md-8">
         <div class="main-user-component">
-          <div class="donation-card" ng-repeat="donation in UC.profile.donations">
-            <div class="row">
-              <div class="col-md-8">
-                <h3>{{donation.loan.borrower.name}}</h3>
-                <h4>{{donation.loan.borrower.image_url}}</h4>
-                <p>
-                  {{donation.loan.description}}
-                </p>
-              </div>
-              <div class="col-md-4">
-                <h5>Donated: {{donation.amount}}</h5>
-                <h5>Paid Back: {{donation.loan.paymentForDonor}}</h5>
-                <h5>Total loan: {{donation.loan.amount}}</h5>
-                <h5>Payments made: {{donation.loan.payments.length}}</h5>
+          <div class="user-filter-menu">
+            <p>
+              Main header: buttons for arranging loans 'active' 'raising' 'all' 'sort by'
+            </p>
+          </div>
+          <div class="panel panel-default" ng-repeat="donation in UC.profile.donations">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-8">
+                  <h3>{{donation.loan.borrower.name}}</h3>
+                  <h4>{{donation.loan.borrower.image_url}}</h4>
+                  <p>
+                    {{donation.loan.description}}
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <h5>Donated: {{donation.amount}}</h5>
+                  <h5>Paid Back: {{donation.loan.paymentForDonor}}</h5>
+                  <h5>Total loan: {{donation.loan.amount}}</h5>
+                  <h5>Payments made: {{donation.loan.payments.length}}</h5>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div> <!-- end of main col -->
     </div> <!-- end of row -->

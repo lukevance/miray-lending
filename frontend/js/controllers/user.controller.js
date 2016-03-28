@@ -8,21 +8,26 @@ function UserController ($window, getLoanForDonorService, getUserProfileService)
     // find current user ID
     vm.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
     // get user info from server using ID
-    getUserProfileService(vm.userInfo.id, storeUser);
+    getUserProfileService(vm.userInfo.id, showUser);
+    vm.balance = 0;
+    vm.totalFunded = 0;
+    vm.amountOut = vm.totalFunded - vm.balance;
 
   } else {
     $window.location.href('/#/');
   }
 
   // get loan info using donation info
-  function storeUser(userData) {
+  function showUser(userData) {
     vm.profile = userData;
     // loop through array of donations
     vm.profile.donations.forEach(function(val){
+      vm.totalFunded += val.amount;
       // get loan info from loan ID
       getLoanForDonorService(val.loan, vm.userInfo.id, function(loanData){
         val.loan = loanData;
-        console.log(val);
+        vm.balance += val.loan.paymentForDonor;
+        vm.amountOut = vm.totalFunded - vm.balance; 
       });
     });
   }
