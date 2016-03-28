@@ -24,6 +24,7 @@
     "pg": "^4.5.1",
     "sails-postgresql": "^0.11.3",
     "serve-favicon": "~2.3.0",
+    "stripe": "^4.5.0",
     "waterline": "^0.11.0"
   }
 }

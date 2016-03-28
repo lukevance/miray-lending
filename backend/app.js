@@ -7,9 +7,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const expressJwt = require('express-jwt');
 // const jwt = require('jsonwebtoken');
-const passport = require('passport');
-const FacebookStrategy = require('passport-facebook');
-const GoogleStrategy = require('passport-google-oauth');
 
 require('dotenv').load();
 
@@ -25,6 +22,7 @@ app.use('/user/profile', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/borrower/new', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/borrower/update', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/borrower/del', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/donation/new', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/loan/new', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/loan/del', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/pay/new', expressJwt({secret: process.env.JWT_Secret}));

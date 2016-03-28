@@ -13,7 +13,6 @@ let Donation = Waterline.Collection.extend({
       primaryKey: true,
       unique: true
     },
-    date: 'date',
     amount: 'integer',
 
     donor: {
