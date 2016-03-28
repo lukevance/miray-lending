@@ -23,7 +23,7 @@ function getGroupAdminService ($http) {
 
 function getGroupService ($http) {
   return function (nextFunc) {
-    return $http.get('//localhost:3000/group/allData')
+    return $http.get('//localhost:3000/group')
     .then(function(allGroups){
       nextFunc(allGroups.data);
     });

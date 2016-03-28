@@ -37,7 +37,8 @@ function adminCreate (getLoanPlansService, getEntrepreneursService, getGroupServ
         if (!$scope.groupsInfo) {
           // get groups
           getGroupService(function(groups){
-            $scope.groupsInfo = groups.data;
+            console.log(groups);
+            $scope.groupsInfo = groups;
             // get borrowers
             getEntrepreneursService(function(entrepreneurs){
               $scope.entrepreneursInfo = entrepreneurs.data;
