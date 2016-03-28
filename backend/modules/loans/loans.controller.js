@@ -19,7 +19,6 @@ function getById (req, res) {
         modifiedLoanObj.donations.forEach(function(donation){
           if (donation.donor.toString() === donor) {
             // save donation percentage
-            console.log('check 1');
             modifiedLoanObj.donationLoanPercentage = (donation.amount / modifiedLoanObj.amount);
           }
         });
@@ -49,13 +48,14 @@ function getById (req, res) {
 }
 
 function getPlans (req, res) {
-  knex('loan_plans')
-  .select()
-  .then(function(planData){
-    res.json(planData);
-  })
-  .catch(function(error){
-    console.log(error);
+  req.models.rate_plans
+  .find()
+  .exec(function(err, loanPlans){
+    if (err) {
+      return res.json({error: err}, 500);
+    } else {
+      res.json(loanPlans);
+    }
   });
 }
 

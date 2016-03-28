@@ -22,6 +22,19 @@ router.use('/group', groupRoutes);
 
 // import seed data from file
 const seedData = require('./db/waterlineSeed');
+// seed loan plans
+router.get('/seed/loan_plans', function(req, res){
+  req.models.rate_plans
+  .create(seedData.loan_plans[0])
+  .exec(function(err, newRate){
+    if (err) {
+      return res.json({error: err}, 500);
+    } else {
+      res.json(newRate);
+    }
+  });
+
+});
 // define seed route to seed database through waterline
 router.get('/seed', function(req, res){
 

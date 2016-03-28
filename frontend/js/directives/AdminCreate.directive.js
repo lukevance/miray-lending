@@ -1,7 +1,7 @@
 angular.module('lendingApp')
-  .directive('adminCreate', ['getLoanPlansService', 'getEntrepreneursService', 'getGroupService', 'newGroupService', 'newEntrepreneurService', 'newLoanService', 'newPaymentService', adminCreate]);
+  .directive('adminCreate', ['$route', 'getLoanPlansService', 'getEntrepreneursService', 'getGroupService', 'newGroupService', 'newEntrepreneurService', 'newLoanService', 'newPaymentService', adminCreate]);
 
-function adminCreate (getLoanPlansService, getEntrepreneursService, getGroupService, newGroupService, newEntrepreneurService, newLoanService, newPaymentService) {
+function adminCreate ($route, getLoanPlansService, getEntrepreneursService, getGroupService, newGroupService, newEntrepreneurService, newLoanService, newPaymentService) {
   return {
     restric: 'E',
     templateUrl: 'partials/adminCreatePanel.html',
@@ -34,21 +34,20 @@ function adminCreate (getLoanPlansService, getEntrepreneursService, getGroupServ
 
       // get info for loan form
       function activateLoan () {
-        if (!$scope.groupsInfo) {
+
           // get groups
           getGroupService(function(groups){
-            console.log(groups);
             $scope.groupsInfo = groups;
             // get borrowers
             getEntrepreneursService(function(entrepreneurs){
               $scope.entrepreneursInfo = entrepreneurs.data;
               // get plans
               getLoanPlansService(function(loanPlans){
+                console.log(loanPlans);
                 $scope.loanPlans = loanPlans;
               });
             });
           });
-        }
 
         $scope.loanActive = !$scope.loanActive;
       }
@@ -105,7 +104,7 @@ function adminCreate (getLoanPlansService, getEntrepreneursService, getGroupServ
           borrower_id: loanForm.borrower.id,
           amount: loanForm.amount,
           group_id: loanForm.group.id,
-          rate_plan_id: loanForm.rate_plan.id,
+          // rate_plan_id: loanForm.rate_plan.id,
           description: loanForm.description,
           date_awarded: loanForm.start_date
         };
@@ -125,6 +124,7 @@ function adminCreate (getLoanPlansService, getEntrepreneursService, getGroupServ
       function submitForm (event, validFunc, formObj) {
         event.preventDefault();
         validFunc(formObj);
+        $route.reload();
       }
 
       function clearForm (form){
