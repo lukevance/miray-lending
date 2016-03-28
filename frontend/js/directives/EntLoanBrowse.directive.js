@@ -25,7 +25,9 @@ function entBrowse (userSigninService, newDonationService) {
           email: email,
           password: password
         };
-        userSigninService(credentials);
+        userSigninService(credentials, function(response){
+          $window.localStorage.token = response.data.token;
+        });
       }
 
       $scope.submitPayment = submitPayment;
