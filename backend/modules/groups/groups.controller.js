@@ -3,7 +3,6 @@
 const async = require('async');
 
 function create(req, res) {
-  console.log(req.body);
   let groupInfo = req.body;
   // groupInfo.name = req.body.name;
   // groupInfo.officer_id = req.body.officerName;

@@ -11,7 +11,6 @@ function navbarMiray (userSigninService) {
     controller: function ($scope, $window) {
       if ($window.localStorage.token) {
         $scope.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
-        console.log(typeof $scope.userInfo);
       }
       $scope.signinSubmit = signinSubmit;
       // define signin function

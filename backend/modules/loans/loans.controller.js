@@ -19,6 +19,7 @@ function getById (req, res) {
         modifiedLoanObj.donations.forEach(function(donation){
           if (donation.donor.toString() === donor) {
             // save donation percentage
+            console.log('check 1');
             modifiedLoanObj.donationLoanPercentage = (donation.amount / modifiedLoanObj.amount);
           }
         });
@@ -28,7 +29,7 @@ function getById (req, res) {
             modifiedLoanObj.totalPayments += payment.amount;
           }
         });
-        modifiedLoanObj.paymentForDonor = (modifiedLoanObj.totalPayments) * modifiedLoanObj.donationLoanPercentage;
+        modifiedLoanObj.paymentForDonor = (modifiedLoanObj.totalPayments * modifiedLoanObj.donationLoanPercentage);
         res.json(modifiedLoanObj);
       }
     });

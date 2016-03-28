@@ -20,7 +20,7 @@ function UserController ($window, getLoanForDonorService, getUserProfileService)
     // loop through array of donations
     vm.profile.donations.forEach(function(val){
       // get loan info from loan ID
-      getLoanForDonorService(val.loan, vm.userID, function(loanData){
+      getLoanForDonorService(val.loan, vm.userInfo.id, function(loanData){
         val.loan = loanData;
         console.log(val);
       });

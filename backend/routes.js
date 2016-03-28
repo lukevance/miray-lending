@@ -135,6 +135,23 @@ function seedDonations () {
   });
 }
 
+// // seed statements
+// function seedStatements () {
+// seedData.statements.forEach(function(val, indx, array){
+//   req.models.statements
+//   .create(val)
+//   .exec(function(err, newStatement){
+//     if (err) {
+//       return res.json({error: err}, 500);
+//     } else {
+//       data.donations.push(newStatement);
+//     }
+//     if (indx === (array.length - 1)) {
+//       endIt();
+//     }
+//   });
+// });
+// }
 
   function endIt () {
     res.json(data);

@@ -40,9 +40,9 @@
             <tr ng-repeat="loan in group.loans">
               <td>{{loan.borrower.name}}</td>
               <td>{{loan.amount}}</td>
-              <td></td>
+              <td>{{loan.totalDonations}}</td>
               <td>{{loan.amount - loan.totalPayments}}</td>
-              <td></td>
+              <td>{{loan.payments.length}}</td>
               <td></td>
             </tr>
           </table>
