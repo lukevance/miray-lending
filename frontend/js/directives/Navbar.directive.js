@@ -20,12 +20,20 @@ function navbarMiray (userSigninService) {
           console.log(response);
           // console.log(window.atob(response.data.token.split('.')[1]));
           $window.localStorage.token = response.data.token;
+          if ($window.localStorage.token) {
+            $scope.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
+          }
         });
       }
       $scope.signout = signout;
       // define signout function
       function signout () {
         delete $window.localStorage.token;
+        if ($window.localStorage.token) {
+          $scope.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
+        } else {
+          delete $scope.userInfo;
+        }
       }
 
     }
