@@ -43,7 +43,6 @@ function adminCreate ($route, getLoanPlansService, getEntrepreneursService, getG
               $scope.entrepreneursInfo = entrepreneurs.data;
               // get plans
               getLoanPlansService(function(loanPlans){
-                console.log(loanPlans);
                 $scope.loanPlans = loanPlans;
               });
             });
@@ -101,10 +100,10 @@ function adminCreate ($route, getLoanPlansService, getEntrepreneursService, getG
 
       function validLoan (loanForm) {
         let loanBody = {
-          borrower_id: loanForm.borrower.id,
+          borrower: loanForm.borrower.id,
           amount: loanForm.amount,
-          group_id: loanForm.group.id,
-          // rate_plan_id: loanForm.rate_plan.id,
+          group: loanForm.group.id,
+          rate_plan_id: loanForm.rate_plan.id,
           description: loanForm.description,
           date_awarded: loanForm.start_date
         };
@@ -124,7 +123,7 @@ function adminCreate ($route, getLoanPlansService, getEntrepreneursService, getG
       function submitForm (event, validFunc, formObj) {
         event.preventDefault();
         validFunc(formObj);
-        $route.reload();
+
       }
 
       function clearForm (form){
@@ -141,6 +140,7 @@ function adminCreate ($route, getLoanPlansService, getEntrepreneursService, getG
           $scope.paymentForm = {};
           $scope.paymentActive = false;
         }
+        $route.reload();
       }
     }
   };

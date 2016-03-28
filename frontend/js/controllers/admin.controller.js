@@ -17,7 +17,6 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
         vm.groups.push(groupInfo[group]);
       }
     }
-    console.log(vm.groups);
   }
 
 }
