@@ -37,18 +37,35 @@ img.main-profile {
 }
 
 li.ent-item {
-  border: black thin solid;
+  /*border: black thin solid;*/
   list-style: none;
   display: inline;
   float: left;
-  width: 25rem;
+  width: 35rem;
   height: 50rem;
   padding: 1rem;
   margin: 2rem;
 }
 
+/*.ent-item.ent-home {
+  margin-left: 10%;
+}*/
+
+.add-form-plus {
+  display: inline;
+  text-align: right;
+  /*margin-left: 80%;*/
+}
+/*.add-form-title {
+  float: left;
+}*/
+
+.group-table-panel {
+  border-width: .5rem;
+}
+
 .drop-container {
-  min-width: 25rem;
+  min-width: 55rem;
 }
 
 .drop-form {

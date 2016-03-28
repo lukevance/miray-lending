@@ -1,16 +1,19 @@
-<div class="entBox">
-  <img class="profile-img" src="{{entrepreneur.image_url}}" alt="" />
-  <h3>{{entrepreneur.name}}</h3>
-  <p>
-    {{entrepreneur.loans[0].description}}
-  </p>
-  <h5>Loan Amount: {{entrepreneur.loans[0].amount}}</h5>
-  <h5>Raised Amount: {{entrepreneur.amount_raised}}</h5>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <img class="profile-img" src="{{entrepreneur.image_url}}" alt="" />
+    <h3>{{entrepreneur.name}}</h3>
+    <p>
+      {{entrepreneur.loans[0].description}}
+    </p>
+    <h5>Loan Amount: {{entrepreneur.loans[0].amount}}</h5>
+    <h5>Raised Amount: {{entrepreneur.amount_raised}}</h5>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#entModal{{entrepreneur.id}}">
+      Read More
+    </button>
+  </div>
 </div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#entModal{{entrepreneur.id}}">
-  Read More
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="entModal{{entrepreneur.id}}" tabindex="-1" role="dialog" aria-labelledby="entModalLabel{{entrepreneur.id}}">
