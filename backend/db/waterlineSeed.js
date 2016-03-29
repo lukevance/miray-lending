@@ -32,8 +32,7 @@ module.exports = {
       phone: '',
       address: '',
       city: '',
-      region: '',
-      group: 1
+      region: ''
     },
     {
       name: 'Soa Maria Brigitte',
@@ -44,8 +43,7 @@ module.exports = {
       phone: '',
       address: '',
       city: '',
-      region: '',
-      group: 1
+      region: ''
     },
     {
       name: 'Mamajiabo',
@@ -132,16 +130,160 @@ module.exports = {
       group: 1
     },
     {
-      name: 'Tahindrazana Catherine denise',
+      name: 'Tahindrazana Catherine Denise',
       bio: 'Catherine used to go fishing with her father when she was younger but now she doesn’t have the money to buy the boat or the nets in order to gather fish that she could sell. She has tried to get a loan in the past but without collateral she has been unable to find anyone willing to loan her money at a decent interest rate.',
       dob: '1972-03-24',
-      id_num_national: '',
+      id_num_national: '401 032 004 635',
       image_url: '/images/people-photos/tahindrazana.png',
       phone: '',
       address: '',
       city: '',
       region: '',
       group: 1
+    },
+    {
+      name: 'Rakotonindrina Pierre Joseph',
+      bio: 'Pierre is a very hard working man who was having trouble supporting his family. He was working for a man in the city making $.50 a day but this opportunity for work was not very consistent and he needed to send his sons to school.',
+      dob: '1970-02-05',
+      id_num_national: '401 031 002 302',
+      image_url: '/images/people-photos/rakotonindrina.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 2
+    },
+    {
+      name: 'Ravoahangy Soa Violette',
+      bio: 'Soa has been struggling for months to put food on the table for her daughter and herself. She did not want to go to the loan sharks for a loan because her friend had gotten into a lot of trouble taking a loan from these people.',
+      dob: '1984-10-27',
+      id_num_national: '401 032 028 675',
+      image_url: '/images/people-photos/ravoahangy.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 2
+    },
+    {
+      name: 'Rabesoavina Victor',
+      bio: 'Victor is the father of 4, 2 boys and 2 girls, and lives in Mahajanga. He had never thought about microfinance before because he know he didn’t have the collateral for it. One day while pulling a taxi cart, which was his job, he heard about MIray and decided to investigate it.',
+      dob: '1978-01-19',
+      id_num_national: '401 031 011 584',
+      image_url: '/images/people-photos/rabesoavina.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 2
+    },
+    {
+      name: 'Abeline Hortencia',
+      bio: 'Abeline is a very hard working man and he and his wife had been having a very hard time supporting themselves. He made $.40 a day doing odd jobs around his city but he could never get work that would consistently pay a good wage.',
+      dob: '1972-05-25',
+      id_num_national: '401 032 006 373',
+      image_url: '/images/people-photos/abeline.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 2
+    },
+    {
+      name: 'Gerard Augustin',
+      bio: 'Gerard has one son named Bertra and has had a steady job for several years now working at the local airport. He has been successful in the past but is hungry for new opportunities.',
+      dob: '1974-10-25',
+      id_num_national: '406 011 013 704',
+      image_url: '/images/people-photos/gerard.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 2
+    },
+    {
+      name: 'Harisoa Cornellia',
+      bio: 'Cornellia works in town at a grocery store and is single. She has some family land out in the countryside that she has been wanting to use but couldn’t save enough money to do anything.',
+      dob: '1985-10-19',
+      id_num_national: '213 012 017 125',
+      image_url: '/images/people-photos/harisoa.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 3
+    },
+    {
+      name: 'Zazasoa Christine',
+      bio: 'Christine had a store that she had been running for a good amount of time but she wanted to make it grow. She didn’t want to take a loan out with the existing loan sharks because she knew that she would be unable to afford to pay the ridiculously high interest rates offered to those with loans.',
+      dob: '1985-07-24',
+      id_num_national: '401 032 027 909',
+      image_url: '/images/people-photos/zazasoa.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 3
+    },
+    {
+      name: 'Vantsy Balsam',
+      bio: 'Vantsy sells fruit in a stand in her local market. She has been successful but is looking forward to the possibility of more business to do.',
+      dob: '1981-07-26',
+      id_num_national: '401 032 026 183',
+      image_url: '/images/people-photos/vantsy.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 3
+    },
+    {
+      name: 'Ravoarisoa Marie adeline',
+      bio: 'Ravaoarisoa lost her husband in a motorcycle accident in 2013, she has been making a living for her and her two sons mending clothes in the local village.',
+      dob: '1987-08-27',
+      id_num_national: '415 012 005 740',
+      image_url: '/images/people-photos/maria.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 3
+    },
+    {
+      name: 'Lydie Parfaitine Angele',
+      bio: 'Lydia is a fantastic entrepreneur with passion and commitment. She is happily married but is disappointed in her job. She cleans houses around town but knows she can do more.',
+      dob: '1973-08-21',
+      id_num_national: '301 052 005 767',
+      image_url: '/images/people-photos/lydia.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 3
+    },
+    {
+      name: 'Anjaratina Myriam',
+      bio: 'Myriam and her husband had fallen on hard times in the time leading up to her receiving a loan. She had tried going to a loan shark for a loan but it had ended very poorly for them. The two of them were having trouble making enough money to feed themselves but they kept working hard doing whatever they could to feed themselves.',
+      dob: '1978-03-24',
+      id_num_national: '210 012 015 772',
+      image_url: '/images/people-photos/anjaratina.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 3
+    },
+    {
+      name: 'Tsaratohy Clostine',
+      bio: 'Tsaratohy owns a jewelry store in the middle of town but does not have the resources to safely secure her products. She wants more inventory space and the ability to store her products safely.',
+      dob: '1984-04-05',
+      id_num_national: '214 012 011 713',
+      image_url: '/images/people-photos/tsaratohy.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 3
     },
   ],
   loans: [
