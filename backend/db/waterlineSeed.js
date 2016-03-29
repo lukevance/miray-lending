@@ -1013,6 +1013,18 @@ module.exports = {
       date: '2015-09-09'
     },
     {
+      amount: 135000,
+      donor: 4,
+      loan: 2,
+      date: '2015-09-05'
+    },
+    {
+      amount: 170000,
+      donor: 3,
+      loan: 2,
+      date: '2015-09-09'
+    },
+    {
       amount: 175000,
       donor: 1,
       loan: 3,
@@ -1028,6 +1040,18 @@ module.exports = {
       amount: 90000,
       donor: 3,
       loan: 3,
+      date: '2015-09-09'
+    },
+    {
+      amount: 135000,
+      donor: 2,
+      loan: 5,
+      date: '2015-09-05'
+    },
+    {
+      amount: 170000,
+      donor: 3,
+      loan: 5,
       date: '2015-09-09'
     },
     {

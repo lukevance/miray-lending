@@ -11,7 +11,9 @@ function login (req, res) {
   .limit(1)
   .exec(function(err, userInfo){
     if (err) {
-      return res.json({error: err}, 500);
+      return res.json({error: err}, 401);
+    } else if (userInfo.length !== 1) {
+      return res.status(401).json({error: 'Credentials are incorrect.'});
     } else {
       // encrypt password for comparison
       bcrypt.compare(userData.password, userInfo[0].password, function(err, response) {
