@@ -24,6 +24,13 @@
 
     <div class="col-md-9">
       <div class="main-admin-dash">
+        <h3 style="display: inline;" >Sort By:</h3>
+        <div style="margin-bottom: 2rem" class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default">Date Started <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+          <button type="button" class="btn btn-default">Amount Paid <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+          <button type="button" class="btn btn-default">Loan Amount <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+          <button type="button" class="btn btn-default">Donor Funded Amount <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+        </div>
         <div class="group-section" ng-repeat="group in ADC.groups">
           <div class="panel panel-default group-table-panel">
             <div class="panel-body">

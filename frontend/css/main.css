@@ -2,12 +2,13 @@ html {
   font-size: 62.5%; }
 
 body {
-  padding-top: 70px;
+  padding-top: 50px;
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
+  color: #222;
+}
 
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
@@ -22,6 +23,36 @@ body {
 
 img.profile-img {
   max-width: 300px;
+}
+
+.bgimage-wrapper {
+  height: 100%;
+  min-height: 100%;
+  /*background-color: #426B8B;*/
+  color: #e1e2e2;
+  background: url(../images/responsive-background.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.bgimage {
+  background: url(../images/responsive-background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 600px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .bgimage {
+    background: url(../images/responsive-background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    max-height: 400px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 }
 
 img.main-profile {
@@ -44,7 +75,7 @@ li.ent-item {
   width: 35rem;
   min-height: 50rem;
   padding: 1rem;
-  margin: 2rem;
+  margin: 0 2rem;
 }
 
 /*.ent-item.ent-home {
@@ -70,10 +101,6 @@ li.ent-item {
 
 .drop-form {
   margin-left: 5%;
-}
-
-.background-section {
-  background-image: url('/images/main-background.JPG');
 }
 
 input.drop-form {
