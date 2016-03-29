@@ -17,8 +17,8 @@ let Loan = Waterline.Collection.extend({
     balance: 'integer',
     rate_plan_id: 'integer',
     description: 'text',
-    date_awarded: 'datetime',
     active: 'boolean',
+    funded: 'boolean',
 
     donations: {
       collection: 'donations',
