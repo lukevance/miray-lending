@@ -17,6 +17,7 @@ let Group = Waterline.Collection.extend({
     officer_id: 'integer',
     city: 'string',
     region: 'string',
+    start_date: 'date',
 
     loans: {
       collection: 'loans',

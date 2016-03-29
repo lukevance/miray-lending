@@ -1,55 +1,148 @@
 module.exports = {
   groups: [
     {
-      name: 'Original Group',
-      officer_id: '1',
-      city: 'Example Town',
-      region: 'Example Region A'
+      name: 'Fitiavana - Love',
+      officer_id: 1,
+      city: 'Mahajanga',
+      region: 'Mahajanga Province',
+      start_date: '2015-10-01'
     },
     {
-      name: 'Beta Group',
-      officer_id: '2',
-      city: 'Sample Town',
-      region: 'Example Region B'
+      name: "L'Avenir - The Future",
+      officer_id: 1,
+      city: 'Mahajanga',
+      region: 'Mahajanga Province',
+      start_date: '2015-10-01'
+    },
+    {
+      name: 'Malala - Beloved',
+      officer_id: 1,
+      city: 'Mahajanga',
+      region: 'Mahajanga Province',
+      start_date: '2016-5-01'
     }
   ],
   borrowers: [
     {
-      name: 'Nirina Margueritte',
-      bio: 'Before,my job was selling frite potatoes.That’s a very little work because one of it cost 50 ariary. In one day, I got  for benefits 1,500 ariary; we had just rice for food and nothing else. Now my occupation changed. When I was selling frite potatoes ,now I sell rice.I chose that because,every day Malagasy peoples need it.',
-      dob: '1985-03-14',
-      id_num_national: 'A1234',
-      image_url: '/images/people-photos/',
-      phone: '123 456 09823',
+      name: 'Ravola Joseline',
+      bio: 'Joseline is a hard working mother of 4. Her husband is the main source of income and makes about $.40 per day. Joseline finds odd jobs but has never had a secure job before.',
+      dob: '1970-08-25',
+      id_num_national: '401 032 002 514',
+      image_url: '/images/people-photos/ravola.png',
+      phone: '',
       address: '',
       city: '',
       region: '',
-      group: ''
+      group: 1
     },
     {
-      name: 'Baoely Honorencia',
-      bio: 'I sell charcot in bag and get some Malagasy arts from countryside and sell to town. I chose those because the charcot is very useful. Every day people’s need it for cooking. And Malagasy arts is so expensive in town,many french man come and buy it.',
-      dob: '1987-04-20',
-      id_num_national: 'C5634',
-      image_url: '/images/people-photos/',
-      phone: '243 987 16393',
+      name: 'Soa Maria Brigitte',
+      bio: 'Soa is a mother of 2 young children. She used to make $.30 a day cleaning houses. She wanted to make enough money in order to send both of her sons to school.',
+      dob: '1978-01-27',
+      id_num_national: '401 012 017 232',
+      image_url: '/images/people-photos/soa.png',
+      phone: '',
       address: '',
       city: '',
       region: '',
-      group: ''
+      group: 1
     },
     {
-      name: 'Deborah Brigitte',
-      bio: 'I don’t know how to say the rejoice that I have in my heart. Before,we lived with suffering and poverty. The head always hurt because me and my husband thought how about today? The kids school?the food? Sometimes we slept without anything. Because my husband occupation was waiting for people byu something heavy like cement,rice in bag...and carry it for 1,000Ar. Sometimes nothing because people choose to go with bus. And me I tried to find someone to give me some clothes to wash.',
-      dob: '1977-07-17',
-      id_num_national: 'B0987',
-      image_url: '/images/people-photos/',
-      phone: '123 456 78901',
+      name: 'Mamajiabo',
+      bio: 'Mamajiabo wanted a way to make a steady income but had no collateral for a loan. She didn’t want to have to pay ridiculous interest on her loan like her brother had done. The best job she had before had paid $.45 a day but was not a consistent source of money.',
+      dob: '1954-05-02',
+      id_num_national: '401 992 030 576',
+      image_url: '/images/people-photos/mamajiabo.png',
+      phone: '',
       address: '',
       city: '',
       region: '',
-      group: ''
-    }
+      group: 1
+    },
+    {
+      name: 'Ratsarazafy Albertine',
+      bio: 'Albertine has been worried about where she was going to get the money to send her daughter to school. She wanted her daughter to have a good education but she had no way of acquiring a good job in order to make enough.',
+      dob: '1987-02-20',
+      id_num_national: '401 032 028 571',
+      image_url: '/images/people-photos/ratsarazafy.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 1
+    },
+    {
+      name: 'Florette Justine',
+      bio: 'Justine has never been able to do something that could earn her a real living wage. She has had jobs that paid a decent amount of money but nothing that could give her consistent income.',
+      dob: '1982-02-03',
+      id_num_national: '401 032 020 347',
+      image_url: '/images/people-photos/ratsarazafy.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 1
+    },
+    {
+      name: 'Angeline',
+      bio: 'Angeline does not make enough money to send her 3 sons to school. She has always wanted to raise pigs and make enough to create art for her family and neighbors.',
+      dob: '1961-08-10',
+      id_num_national: '401 992 035 468',
+      image_url: '/images/people-photos/angeline.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 1
+    },
+    {
+      name: 'Masinirina Françoise',
+      bio: 'Françoise has always had a knack for baking but has never had the ability to turn this skill into something that could earn money for her and her husband.',
+      dob: '1979-12-15',
+      id_num_national: '401 032 016 357',
+      image_url: '/images/people-photos/masinirina.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 1
+    },
+    {
+      name: 'Razafindramaro Eugenie',
+      bio: 'Eugenie has always been a hard working woman but has had trouble supporting herself and now her two children. Her newborn son and young daughter have sometimes gone nights without food because she is sometimes unable to earn enough to feed them.',
+      dob: '1991-05-19',
+      id_num_national: '401 032 039 749',
+      image_url: '/images/people-photos/razafindramaro.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 1
+    },
+    {
+      name: 'Ramamonjisoa Rose Lys Rezyc',
+      bio: "Since Rose was young she helped her mother cook and now has become quite skilled at baking bread and sambos for her friends and family. Before getting a loan there didn't seem to be a feasible way to turn this skill into an opportunity to support herself.",
+      dob: '1994-03-16',
+      id_num_national: '415 092 008 787',
+      image_url: '/images/people-photos/ramamonjisoa.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 1
+    },
+    {
+      name: 'Tahindrazana Catherine denise',
+      bio: 'Catherine used to go fishing with her father when she was younger but now she doesn’t have the money to buy the boat or the nets in order to gather fish that she could sell. She has tried to get a loan in the past but without collateral she has been unable to find anyone willing to loan her money at a decent interest rate.',
+      dob: '1972-03-24',
+      id_num_national: '',
+      image_url: '/images/people-photos/tahindrazana.png',
+      phone: '',
+      address: '',
+      city: '',
+      region: '',
+      group: 1
+    },
   ],
   loans: [
     {
