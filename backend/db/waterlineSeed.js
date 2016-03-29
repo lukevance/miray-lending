@@ -975,36 +975,204 @@ module.exports = {
       role: 'donor'
     },
     {
+      name: 'Marge Smith',
+      email: 'marge@canada.com',
+      password: '$2a$08$ziJXJ/9TMfj6uMCp6Xysn.c87JsbaErHDLE8k/S4vBU6Z6xUHmAVe',
+      role: 'donor'
+    },
+    {
       name: 'Demo User',
       email: 'user@demo.com',
       password: '$2a$08$n3iHOtYjDx/TWUBv.oSV7ehTOr7T9srL20HEPjKHOzOze5LqJ6KJG',
       role: 'donor'
     },
     {
-      name: 'Super Admin',
-      email: 'super@admin.com',
+      name: 'Main Admin',
+      email: 'admin@admin.com',
       password: '$2a$08$6VFhtFsmFrnRGNQzU.ZP4.IxzpvYo3YT6PxaSHog2ehPZBoKEDkWG',
       role: 'admin'
     }
   ],
   donations: [
     {
-      amount: 25000,
+      amount: 75000,
       donor: 1,
       loan: 1,
-      date: '2016-03-15'
+      date: '2015-09-15'
     },
     {
-      amount: 35000,
-      donor: 1,
-      loan: 2,
-      date: '2016-02-15'
+      amount: 135000,
+      donor: 2,
+      loan: 1,
+      date: '2015-09-05'
     },
     {
-      amount: 17000,
+      amount: 170000,
+      donor: 3,
+      loan: 1,
+      date: '2015-09-09'
+    },
+    {
+      amount: 175000,
       donor: 1,
       loan: 3,
-      date: '2016-01-15'
+      date: '2015-09-15'
+    },
+    {
+      amount: 45000,
+      donor: 2,
+      loan: 3,
+      date: '2015-09-05'
+    },
+    {
+      amount: 90000,
+      donor: 3,
+      loan: 3,
+      date: '2015-09-09'
+    },
+    {
+      amount: 102000,
+      donor: 4,
+      loan: 6,
+      date: '2015-09-15'
+    },
+    {
+      amount: 45000,
+      donor: 2,
+      loan: 6,
+      date: '2015-09-05'
+    },
+    {
+      amount: 75000,
+      donor: 3,
+      loan: 8,
+      date: '2015-09-09'
+    },
+    {
+      amount: 205000,
+      donor: 1,
+      loan: 8,
+      date: '2015-09-15'
+    },
+    {
+      amount: 135000,
+      donor: 2,
+      loan: 11,
+      date: '2015-09-05'
+    },
+    {
+      amount: 170000,
+      donor: 3,
+      loan: 11,
+      date: '2015-09-09'
+    },
+    {
+      amount: 175000,
+      donor: 1,
+      loan: 11,
+      date: '2015-09-15'
+    },
+    {
+      amount: 45000,
+      donor: 4,
+      loan: 11,
+      date: '2015-09-05'
+    },
+    {
+      amount: 90000,
+      donor: 3,
+      loan: 13,
+      date: '2015-09-09'
+    },
+    {
+      amount: 150000,
+      donor: 4,
+      loan: 13,
+      date: '2015-09-15'
+    },
+    {
+      amount: 45000,
+      donor: 2,
+      loan: 14,
+      date: '2015-09-05'
+    },
+    {
+      amount: 180000,
+      donor: 3,
+      loan: 14,
+      date: '2015-09-09'
+    },
+    {
+      amount: 170000,
+      donor: 3,
+      loan: 16,
+      date: '2015-09-09'
+    },
+    {
+      amount: 175000,
+      donor: 1,
+      loan: 16,
+      date: '2015-09-15'
+    },
+    {
+      amount: 45000,
+      donor: 4,
+      loan: 17,
+      date: '2015-09-05'
+    },
+    {
+      amount: 90000,
+      donor: 3,
+      loan: 18,
+      date: '2015-09-09'
+    },
+    {
+      amount: 150000,
+      donor: 4,
+      loan: 18,
+      date: '2015-09-15'
+    },
+    {
+      amount: 45000,
+      donor: 2,
+      loan: 19,
+      date: '2015-09-05'
+    },
+    {
+      amount: 180000,
+      donor: 3,
+      loan: 21,
+      date: '2015-09-09'
+    },
+    {
+      amount: 45000,
+      donor: 3,
+      loan: 19,
+      date: '2015-09-05'
+    },
+    {
+      amount: 90000,
+      donor: 2,
+      loan: 18,
+      date: '2015-09-09'
+    },
+    {
+      amount: 150000,
+      donor: 4,
+      loan: 17,
+      date: '2015-09-15'
+    },
+    {
+      amount: 45000,
+      donor: 2,
+      loan: 20,
+      date: '2015-09-05'
+    },
+    {
+      amount: 180000,
+      donor: 3,
+      loan: 17,
+      date: '2015-09-09'
     }
   ],
   loan_plans: [
