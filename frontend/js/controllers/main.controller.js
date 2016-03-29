@@ -1,7 +1,7 @@
 angular.module('lendingApp')
-  .controller('MainController', ['getEntrepreneursService', MainController]);
+  .controller('MainController', ['$document', 'getEntrepreneursService', MainController]);
 
-function MainController (getEntrepreneursService) {
+function MainController ($document, getEntrepreneursService) {
   var vm = this;
   vm.title = 'Miray Development';
   vm.subtitle = 'Micro Loans With Massive Impact';
@@ -37,11 +37,14 @@ function MainController (getEntrepreneursService) {
 
     return firstThree;
   }
+  vm.scrollToAbout = scrollToAbout;
+  function scrollToAbout () {
+    //Scroll to the exact position
+    var duration = 800;
+    var someElement = angular.element(document.getElementById('about'));
+    $document.scrollToElement(someElement, 0, duration);
+  }
 
-  // get active loans service
-    // .then get entrepreneurs service
-      // .then get donations service
-        // populate model with entrepreneur json.
 
 
 }

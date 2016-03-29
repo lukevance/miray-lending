@@ -1,5 +1,8 @@
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  background-color: rgb(240, 240, 240);
+
+}
 
 body {
   padding-top: 50px;
@@ -24,6 +27,26 @@ body {
 
 img.profile-img {
   max-width: 300px;
+}
+
+.main-title {
+  font-size: 40pt;
+}
+
+.main-subtitle {
+  font-size: 30pt;
+}
+
+.front-button {
+  color: rgba(217, 135, 40, 0.88);
+  background: transparent;
+  border: solid 2px rgba(217, 135, 40, 0.88);
+}
+
+a.front-button:hover {
+  background: rgba(217, 135, 40, 0.63);
+  border: solid 2px rgba(217, 135, 40, 0.88);
+  color: white;
 }
 
 .bgimage-wrapper {
@@ -72,6 +95,14 @@ img.profile {
   text-align: center;
 }
 
+.centered {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
 .profile-wrapper {
   height: 25rem;
   border-radius: 5px;
@@ -95,6 +126,11 @@ li.ent-item {
   height: 60rem;
   padding: 1rem;
   margin: 0 3rem;
+  /*margin: auto;*/
+}
+
+li.ent-item:first-of-type {
+  margin-left: 5rem;
 }
 
 .profile-bio {

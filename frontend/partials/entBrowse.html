@@ -27,7 +27,7 @@
     <div class="modal-content ent-profile-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="entModalLabel{{entrepreneur.borrower.id}}">{{entrepreneur.borrower.name}}</h4>
+        <!-- <h4 class="modal-title" id="entModalLabel{{entrepreneur.borrower.id}}">{{entrepreneur.borrower.name}}</h4> -->
       </div>
       <div class="modal-body">
         <div class="row">
@@ -64,19 +64,24 @@
 
         <div class="row signin-form" ng-show="signinActive">
           <div class="col-md-12">
-            <h3>Sign in first to fund this loan.</h3>
-            <form>
-              <div class="form-group">
-                <label for="signinEmail">Email</label>
-                <input class="form-control" type="text" name="email" id="signinEmail" ng-model="email">
+            <h3 class="section-title">Sign in or sign up first to fund this loan.</h3>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-left">
+                <form>
+                  <div class="form-group">
+                    <label for="signinEmail">Email</label>
+                    <input class="form-control" type="text" name="email" id="signinEmail" ng-model="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="signinPassword">Password</label>
+                    <input type="password" class="form-control" name="password" id="signinPassword" ng-model="password">
+                  </div>
+                  <button class="btn btn-default btn-primary" type="button" name="signinBtn" ng-click="signinSubmit(email, password); email=''; password='';">Signin</button>
+                  <button class="btn btn-default" type="button" name="cancelBtn" ng-click="email=''; password='';">Cancel</button>
+                </form>
+                <p>Not already a user? <a data-dismiss="modal"  href="/#/signup"> Signup</a></p>
               </div>
-              <div class="form-group">
-                <label for="signinPassword">Password</label>
-                <input type="password" class="form-control" name="password" id="signinPassword" ng-model="password">
-              </div>
-              <button class="btn btn-default btn-primary" type="button" name="signinBtn" ng-click="signinSubmit(email, password)">Signin</button>
-              <button class="btn btn-default" type="button" name="cancelBtn" ng-click="email=''; password='';">Cancel</button>
-            </form>
+            </div>
           </div>
         </div>
 

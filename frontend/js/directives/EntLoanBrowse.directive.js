@@ -24,7 +24,12 @@ function entBrowse (userSigninService, newDonationService) {
           password: password
         };
         userSigninService(credentials, function(response){
-          $window.localStorage.token = response.data.token;
+          if (response.data.token) {
+            $window.localStorage.token = response.data.token;
+            $scope.donationActive = true;
+            $scope.signinActive = false;
+          }
+
         });
       }
 

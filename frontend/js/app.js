@@ -1,4 +1,4 @@
-angular.module('lendingApp', ['ngRoute', 'ngLoadScript'])
+angular.module('lendingApp', ['ngRoute', 'ngLoadScript', 'duScroll'])
   .config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
   });
