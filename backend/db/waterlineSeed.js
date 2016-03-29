@@ -288,10 +288,10 @@ module.exports = {
   ],
   loans: [
     {
-      amount: 1200000,
-      balance: 120000,
+      amount: 2000000,
+      balance: 2000000,
       rate_plan_id: 1,
-      description: 'Nirina is trying to start selling rice in the city markets. She needs funds for a cart and donkey to transport rice from her village to the nearest city where rice is sold at a much higher price.',
+      description: "When Joseline heard about Miray and what our mission was she was immediately interested. She came with a group of friends and an already formed idea. She wanted to get a loan of 2,000,000Ar and start buying charcoal in the countryside and then bringing it to the city to sell wholesale for a profit. Since getting her funding she has successfully started her business and has begun seeing the impact in her family's life.",
       active: true,
       borrower: 1,
       group: 1
