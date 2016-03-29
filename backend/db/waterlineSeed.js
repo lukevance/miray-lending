@@ -74,7 +74,7 @@ module.exports = {
       bio: 'Justine has never been able to do something that could earn her a real living wage. She has had jobs that paid a decent amount of money but nothing that could give her consistent income.',
       dob: '1982-02-03',
       id_num_national: '401 032 020 347',
-      image_url: '/images/people-photos/ratsarazafy.png',
+      image_url: '/images/people-photos/florette.png',
       phone: '',
       address: '',
       city: '',

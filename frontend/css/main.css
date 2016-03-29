@@ -59,6 +59,16 @@ img.main-profile {
   max-width: 300px;
 }
 
+img.profile {
+  width: 100%;
+}
+
+.profile-wrapper {
+  height: 25rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .ent-profile-dialog {
   min-width: 80%;
 }
@@ -73,9 +83,9 @@ li.ent-item {
   display: inline;
   float: left;
   width: 35rem;
-  min-height: 50rem;
+  height: 60rem;
   padding: 1rem;
-  margin: 0 2rem;
+  margin: 0 3rem;
 }
 
 /*.ent-item.ent-home {

@@ -1,6 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-body" data-toggle="modal" data-target="#entModal{{entrepreneur.id}}">
-    <img class="profile-img" src="{{entrepreneur.image_url}}" alt="" />
+    <div class="profile-wrapper">
+      <img class="profile" src="{{entrepreneur.image_url}}" alt="" />
+    </div>
     <h3>{{entrepreneur.name}}</h3>
     <p>
       {{entrepreneur.loans[0].description | limitTo: 140}} <a href="/#/">...Read More</a>
