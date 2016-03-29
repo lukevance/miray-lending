@@ -1,15 +1,36 @@
 'use strict';
 
+// function getAll (req, res) {
+//   req.models.borrowers
+//   .find()
+//   .populate('loans')
+//   .populate('payments')
+//   .exec(function(err, borrowersData) {
+//     if (err) {
+//       return res.json({error: err}, 500);
+//     } else {
+//       res.json(borrowersData);
+//     }
+//   });
+// }
+
 function getAll (req, res) {
-  req.models.borrowers
-  .find()
-  .populate('loans')
-  .populate('payments')
-  .exec(function(err, borrowersData) {
+  req.models.loans
+  .find({active: true})
+  .populate(['group', 'borrower', 'donations', 'payments'])
+  .exec(function(err, allBorrowers){
     if (err) {
       return res.json({error: err}, 500);
     } else {
-      res.json(borrowersData);
+      var count = 0;
+      allBorrowers.forEach(function(loan){
+        loan.amount = (loan.amount / 3100).toFixed();
+        loan.totalDonations = (addAmounts(loan.donations) / 3100).toFixed();
+        count++;
+      });
+      if (count === allBorrowers.length){
+        res.json(allBorrowers);
+      }
     }
   });
 }
@@ -71,6 +92,14 @@ function deleteOne (req, res) {
       res.json(deletedBorrower);
     }
   });
+}
+
+function addAmounts (array) {
+  var total = 0;
+  array.forEach(function(transaction){
+    total += transaction.amount;
+  });
+  return total;
 }
 
 module.exports = {

@@ -1,7 +1,5 @@
 'use strict';
 
-var knex = require('../../db/knex');
-
 function getById (req, res) {
   if (req.query.donor) {
     let donor = req.query.donor;

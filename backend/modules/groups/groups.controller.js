@@ -81,7 +81,7 @@ function getAllAdmin (req, res) {
           // add payments up
           loan.totalPayments = addAmounts(loan.payments);
           // add donations up
-          loan.totalDonations = addAmounts(loan.payments);
+          loan.totalDonations = addAmounts(loan.donations);
           // push loan object into group
           groupedLoansObj[id].loans.push(loan);
         }

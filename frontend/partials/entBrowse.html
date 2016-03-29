@@ -1,14 +1,18 @@
 <div class="panel panel-default">
-  <div class="panel-body" data-toggle="modal" data-target="#entModal{{entrepreneur.id}}">
+  <div class="panel-body" data-toggle="modal" data-target="#entModal{{entrepreneur.borrower.id}}">
     <div class="profile-wrapper">
-      <img class="profile" src="{{entrepreneur.image_url}}" alt="" />
+      <img class="profile" src="{{entrepreneur.borrower.image_url}}" alt="" />
     </div>
-    <h3>{{entrepreneur.name}}</h3>
+    <h4>{{entrepreneur.borrower.name}}</h4>
     <p>
-      {{entrepreneur.loans[0].description | limitTo: 140}} <a href="/#/">...Read More</a>
+      {{entrepreneur.description | limitTo: 120}} <a href="/#/">...Read More</a>
     </p>
-    <h5>Loan Amount: {{entrepreneur.loans[0].amount}}</h5>
-    <h5>Raised Amount: {{entrepreneur.amount_raised}}</h5>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{(entrepreneur.totalDonations / entrepreneur.amount) * 100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(entrepreneur.totalDonations / entrepreneur.amount) * 100}}%;">
+      </div>
+    </div>
+    <h4 class="loan-goal"><b>${{entrepreneur.totalDonations}} of ${{entrepreneur.amount}} Raised</b></h4>
+
     <!-- Button trigger modal -->
     <!-- <button type="button" class="btn btn-primary btn-lg">
       Read More
@@ -18,21 +22,21 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="entModal{{entrepreneur.id}}" tabindex="-1" role="dialog" aria-labelledby="entModalLabel{{entrepreneur.id}}">
+<div class="modal fade" id="entModal{{entrepreneur.borrower.id}}" tabindex="-1" role="dialog" aria-labelledby="entModalLabel{{entrepreneur.borrower.id}}">
   <div class="modal-dialog ent-profile-dialog" role="document">
     <div class="modal-content ent-profile-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="entModalLabel{{entrepreneur.id}}">{{entrepreneur.name}}</h4>
+        <h4 class="modal-title" id="entModalLabel{{entrepreneur.borrower.id}}">{{entrepreneur.borrower.name}}</h4>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-6">
-            <img src="{{entrepreneur.image_url}}" alt="" class="main-profile"/>
+          <div class="col-md-4">
+            <img src="{{entrepreneur.borrower.image_url}}" alt="" class="main-profile"/>
           </div>
-          <div class="col-md-6">
-            <p>
-              {{entrepreneur.bio}}
+          <div class="col-md-8">
+            <p class="profile-bio">
+              {{entrepreneur.borrower.bio}}
             </p>
           </div>
         </div>
@@ -43,12 +47,12 @@
         </div>
         <div class="row" style="border-top: thin black solid;">
           <div class="col-md-6">
-            <h5>Loan Amount: {{entrepreneur.loans[0].amount}}</h5>
+            <h5>Loan Amount: {{entrepreneur.amount}}</h5>
 
           </div>
           <div class="col-md-6">
             <p>
-              {{entrepreneur.loans[0].description}}
+              {{entrepreneur.description}}
             </p>
           </div>
         </div>

@@ -17,17 +17,18 @@
 
 <div class="container-fluid">
 
-  <div class="row seperator sectionTitle">
-    <div class="col-md-12">
-      <h4>This is where the entrepreneurs will be to browse through</h4>
+  <div class="row seperator">
+    <div class="col-md-12 section-title">
+      <h2 class="">Featured Entrepreneurs</h2>
+      <h4><a href="/#/entrepreneurs">Browse All</a></h4>
     </div>
   </div>
 
   <div class="row entBrowser">
     <div class="col-md-12">
       <ul class="ent-item">
-        <li class="ent-item center-block" ng-repeat="entrepreneur in MC.featuredEnts">
-          <ent-browse entrepreneur="entrepreneur">
+        <li class="ent-item center-block" ng-repeat="loan in MC.featuredEnts">
+          <ent-browse entrepreneur="loan">
           </ent-browse>
         </li>
       </ul>

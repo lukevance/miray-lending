@@ -10,12 +10,10 @@ function entBrowse (userSigninService, newDonationService) {
     templateUrl: 'partials/entBrowse.html',
     controller: function($scope, $window){
       // remove this line later when donations are connected
-      $scope.entrepreneur.amount_raised = 50;
       $scope.selectEnt = selectEnt;
       $scope.signinActive = false;
       $scope.donationActive = false;
       function selectEnt (clickedEnt) {
-        console.log(clickedEnt);
         $scope.currEnt = clickedEnt;
       }
 

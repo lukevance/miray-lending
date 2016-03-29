@@ -8,6 +8,7 @@ body {
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
+  text-align: left;
 }
 
   h1, h2, h3, h4, h5, h6 {
@@ -63,6 +64,14 @@ img.profile {
   width: 100%;
 }
 
+.seperator {
+  margin-top: 50px;
+}
+
+.section-title {
+  text-align: center;
+}
+
 .profile-wrapper {
   height: 25rem;
   border-radius: 5px;
@@ -86,6 +95,10 @@ li.ent-item {
   height: 60rem;
   padding: 1rem;
   margin: 0 3rem;
+}
+
+.profile-bio {
+  font-size: 16pt;
 }
 
 /*.ent-item.ent-home {
@@ -119,4 +132,9 @@ input.drop-form {
 
 .donation-card {
   border: solid black thin;
+}
+
+.loan-goal {
+  font-family: sans-serif;
+  color: rgb(24, 80, 163);
 }
