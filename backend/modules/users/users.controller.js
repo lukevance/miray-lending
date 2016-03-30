@@ -43,7 +43,6 @@ function create (req, res) {
       if (err) {
         return res.json({error: err}, 500);
       } else {
-        console.log(userMade);
         let profile = {
           id: userMade.id,
           name: userMade.name,

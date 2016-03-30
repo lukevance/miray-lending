@@ -24,8 +24,9 @@ function getAll (req, res) {
     } else {
       var count = 0;
       allBorrowers.forEach(function(loan){
-        loan.amount = (loan.amount / 3100).toFixed();
-        loan.totalDonations = (addAmounts(loan.donations) / 3100).toFixed();
+        loan.amount = ((loan.amount / 3100).toFixed())*1;
+        loan.totalDonations = (addAmounts(loan.donations) / 3100).toFixed()*1;
+        console.log(typeof loan.amount);
         count++;
       });
       if (count === allBorrowers.length){

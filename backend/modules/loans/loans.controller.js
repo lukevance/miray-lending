@@ -26,6 +26,7 @@ function getById (req, res) {
             modifiedLoanObj.totalPayments += payment.amount;
           }
         });
+        modifiedLoanObj.totalPayments = (modifiedLoanObj.totalPayments / 3100).toFixed();
         modifiedLoanObj.paymentForDonor = (modifiedLoanObj.totalPayments * modifiedLoanObj.donationLoanPercentage);
         res.json(modifiedLoanObj);
       }

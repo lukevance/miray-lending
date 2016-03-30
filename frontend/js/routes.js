@@ -9,9 +9,9 @@ angular.module('lendingApp')
         templateUrl: 'views/signup.html',
         controller: 'SignupController as SC'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutController as AC'
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'AdminController as ADC'
       })
       .when('/entrepreneurs', {
         templateUrl: 'views/entrepreneurs.html',

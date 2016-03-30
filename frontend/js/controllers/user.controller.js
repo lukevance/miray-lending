@@ -11,7 +11,7 @@ function UserController ($window, getLoanForDonorService, getUserProfileService)
     getUserProfileService(vm.userInfo.id, showUser);
     vm.balance = 0;
     vm.totalFunded = 0;
-    vm.amountOut = vm.totalFunded - vm.balance;
+    vm.amountOut = (vm.totalFunded - vm.balance);
 
   } else {
     $window.location.href('/#/');
@@ -22,14 +22,19 @@ function UserController ($window, getLoanForDonorService, getUserProfileService)
     vm.profile = userData;
     // loop through array of donations
     vm.profile.donations.forEach(function(val){
+      val.amount = Math.round(val.amount / 3100);
       vm.totalFunded += val.amount;
       // get loan info from loan ID
       getLoanForDonorService(val.loan, vm.userInfo.id, function(loanData){
         val.loan = loanData;
-        vm.balance += val.loan.paymentForDonor;
-        vm.amountOut = vm.totalFunded - vm.balance; 
+        val.loan.amount = Math.round(val.loan.amount / 3100);
+        var payment = Math.round(val.loan.paymentForDonor);
+        vm.balance += payment;
+        vm.amountOut = vm.totalFunded - vm.balance;
       });
     });
+    // vm.totalFunded = (vm.totalFunded / 3100).toFixed();
+
   }
 
 

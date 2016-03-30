@@ -6,10 +6,10 @@
     <div class="col-md-12 sort-menu">
       <div class="btn-group" role="group" aria-label="...">
         <ul class="sort-links">
-          <li>Recently Started</li>
-          <li>Ending Soon</li>
-          <li ng-click="EC.sortByTracker = 'amount';">Loan Amount</li>
-          <li ng-click="EC.sortByTracker = 'totalDonations';">Most Funded</li>
+          <li ng-class="{active: EC.sort[0]}" ng-click="EC.sortByTracker = 'group.start_date'; EC.selectSort(0);">Recently Started</li>
+          <li ng-class="{active: EC.sort[1]}" ng-click="EC.sortByTracker = '-group.start_date'; EC.selectSort(1);">Ending Soon</li>
+          <li ng-class="{active: EC.sort[2]}" ng-click="EC.sortByTracker = '-amount'; EC.selectSort(2);">Loan Amount</li>
+          <li ng-class="{active: EC.sort[3]}" ng-click="EC.sortByTracker = '-totalDonations'; EC.selectSort(3);">Most Funded</li>
         </ul>
       </div>
     </div>
@@ -17,7 +17,7 @@
   <div class="row">
     <div class="col-md-12">
       <ul class="ent-item">
-        <li class="ent-item" ng-repeat="entrepreneur in EC.allEntrepreneurs | orderBy: EC.sortByTracker:true">
+        <li class="ent-item" ng-repeat="entrepreneur in EC.allEntrepreneurs | orderBy: EC.sortByTracker">
           <ent-browse entrepreneur="entrepreneur">
           </ent-browse>
         </li>

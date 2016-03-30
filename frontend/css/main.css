@@ -94,7 +94,7 @@ a.front-button:hover {
 
 div.ent-banner > h1 {
   padding-top: 8rem;
-  padding-left: 3rem;
+  padding-left: 7rem;
   font-size: 40pt;
   font-weight: bolder;
 }
@@ -110,8 +110,32 @@ ul.sort-links > li {
   float: left;
   color: rgb(245, 245, 245);
   font-size: 16pt;
-  margin-left: 2rem;
-  padding: 1rem 0;
+  padding: .5rem 0;
+  margin: .5rem 0 .5rem 2rem;
+}
+
+ul.sort-links > li:hover {
+  cursor: pointer;
+  border-bottom: solid white 0.25rem;
+  list-style: none;
+  display: inline;
+  float: left;
+  color: rgb(245, 245, 245);
+  font-size: 16pt;
+  padding: .25rem 0;
+  margin: .5rem 0 .5rem 2rem;
+}
+
+ul.sort-links > li:active, ul.sort-links > li.active {
+  cursor: pointer;
+  border-bottom: solid white 0.25rem;
+  list-style: none;
+  display: inline;
+  float: left;
+  color: rgb(245, 245, 245);
+  font-size: 16pt;
+  padding: .25rem 0;
+  margin: .5rem 0 .5rem 2rem;
 }
 
 img.main-profile {
