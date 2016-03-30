@@ -30,6 +30,7 @@ function UserController ($window, editUserService, getLoanForDonorService, getUs
         val.loan = loanData;
         val.loan.amount = Math.round(val.loan.amount / 3100);
         var payment = Math.round(val.loan.paymentForDonor);
+        val.loan.paymentForDonor = payment;
         vm.balance += payment;
         vm.amountOut = vm.totalFunded - vm.balance;
       });
