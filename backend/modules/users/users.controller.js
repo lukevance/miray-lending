@@ -64,7 +64,7 @@ function update (req, res) {
   req.models.users
   .update({
     id: req.params.id
-  }, req.body)
+  }, {balance: req.body.balance})
   .exec(function(err, updatedUser){
     if (err) {
       return res.json({error: err}, 500);

@@ -37,7 +37,7 @@ function entBrowse (userSigninService, newDonationService) {
       function submitPayment (amount, loanID) {
         if ($window.localStorage.token) {
           var details = {
-            amount: amount,
+            amount: (amount * 3100),
             loan: loanID,
             donor: JSON.parse(window.atob($window.localStorage.token.split('.')[1])).id
           };
@@ -54,6 +54,7 @@ function entBrowse (userSigninService, newDonationService) {
         if ($window.localStorage.token) {
           $scope.donationActive = true;
           $scope.signinActive = false;
+          $scope.donor = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
         } else {
           $scope.donationActive = false;
           $scope.signinActive = true;

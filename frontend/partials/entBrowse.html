@@ -64,7 +64,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
-        <button type="button" class="btn btn-primary" ng-click="donate()">Donate Now</button>
+        <button type="button" class="btn btn-primary" ng-click="donate()">Fund Now</button>
 
         <div class="row signin-form" ng-show="signinActive">
           <div class="col-md-12">
@@ -91,17 +91,28 @@
 
 
         <div class="row donation-form" ng-show="donationActive">
-          <div class="col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="col-md-8">
+              <h5 class="form-text-left">Thanks for contributing, {{donor.name}}!</h5>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-offset-4">
             <form>
               <div class="form-group">
                 <label for="donationAmount">Amount</label>
-                <input class="form-control" type="text" name="amount" id="donationAmount" ng-model="donationAmount">
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input id="donationAmount" name="amount" type="number" value="20" min="0" step="0.01" data-number-to-fixed="2" ng-model="donationAmount" data-number-stepfactor="100" class="form-control currency" id="c2" />
+              </div>
               </div>
               <div class="form-group">
                 <label for="paymentType">Payment Type</label>
-                <input type="text" class="form-control" id="paymentType" ng-model="paymentType">
+                <select type="text" class="form-control" id="paymentType" ng-model="paymentType">
+                  <option value="option">Credit Card</option>
+                  <option value="option">Balance: $53.00</option>
+                </select>
               </div>
-              <button class="btn btn-default btn-primary" type="button" name="signinBtn" data-dismiss="modal" ng-click="submitPayment(donationAmount, entrepreneur.loans[0].id)">Fund</button>
+              <button class="btn btn-default btn-primary" type="button" name="signinBtn" data-dismiss="modal" ng-click="submitPayment(donationAmount, entrepreneur.id)">Fund</button>
               <button class="btn btn-default" type="button" name="cancelBtn" data-dismiss="modal" ng-click="donationAmount=''; paymentType='';">Cancel</button>
             </form>
 

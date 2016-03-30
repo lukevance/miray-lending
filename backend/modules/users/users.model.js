@@ -25,6 +25,7 @@ var User = Waterline.Collection.extend({
     password: {
       type: 'string'
     },
+    balance: 'integer',
     role: 'string',
 
     donations: {

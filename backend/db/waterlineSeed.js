@@ -966,24 +966,28 @@ module.exports = {
       name: 'Luke Vance',
       email: 'lukevance@myemail.com',
       password: '$2a$08$ziJXJ/9TMfj6uMCp6Xysn.c87JsbaErHDLE8k/S4vBU6Z6xUHmAVe',
+      balance: 0,
       role: 'donor'
     },
     {
       name: 'Jack Johnson',
       email: 'jackyJ@dubey.com',
       password: '$2a$08$ziJXJ/9TMfj6uMCp6Xysn.c87JsbaErHDLE8k/S4vBU6Z6xUHmAVe',
+      balance: 0,
       role: 'donor'
     },
     {
       name: 'Marge Smith',
       email: 'marge@canada.com',
       password: '$2a$08$ziJXJ/9TMfj6uMCp6Xysn.c87JsbaErHDLE8k/S4vBU6Z6xUHmAVe',
+      balance: 0,
       role: 'donor'
     },
     {
       name: 'Demo User',
       email: 'user@demo.com',
       password: '$2a$08$n3iHOtYjDx/TWUBv.oSV7ehTOr7T9srL20HEPjKHOzOze5LqJ6KJG',
+      balance: 0,
       role: 'donor'
     },
     {

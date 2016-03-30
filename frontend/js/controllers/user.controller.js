@@ -1,7 +1,7 @@
 angular.module('lendingApp')
-  .controller('UserController', ['$window','getLoanForDonorService', 'getUserProfileService', UserController]);
+  .controller('UserController', ['$window', 'editUserService', 'getLoanForDonorService', 'getUserProfileService', UserController]);
 
-function UserController ($window, getLoanForDonorService, getUserProfileService) {
+function UserController ($window, editUserService, getLoanForDonorService, getUserProfileService) {
   var vm = this;
   // check to see if user is logged in
   if ($window.localStorage.token) {
@@ -20,6 +20,7 @@ function UserController ($window, getLoanForDonorService, getUserProfileService)
   // get loan info using donation info
   function showUser(userData) {
     vm.profile = userData;
+    vm.balance = userData.balance;
     // loop through array of donations
     vm.profile.donations.forEach(function(val){
       val.amount = Math.round(val.amount / 3100);
