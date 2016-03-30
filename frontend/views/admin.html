@@ -1,16 +1,28 @@
 <div class="container-fluid">
-  <div class="row">
+
+  <div class="row admin-header">
     <div class="col-md-12">
-      <div class="panel panel-default">
+      <div class="panel panel-default admin-panel">
         <div class="panel-body">
-          <div class="col-md-8">
-            <h1>{{ADC.title}}</h1>
-            <h3>{{ADC.subtitle}}</h3>
+          <div class="col-md-3">
+            <h2>Admin</h2>
+            <h4>Welcome, Administrator</h4>
           </div>
-          <div class="col-md-4">
-            <h4>Total Loans: ${{ADC.totalLoansAmount}} <b>Ar</b></h4>
-            <h4>Total Payments: ${{ADC.totaPaymentsAmount}} <b>Ar</b></h4>
-            <h4>Total Donated: ${{ADC.totalDonations}} <b>USD</b></h4>
+          <div class="col-md-3">
+            <h2 class="admin">${{ADC.totalLoansAmount}} <b>Ar</b></h2>
+            <h4>Total Loans</h4>
+          </div>
+          <div class="col-md-2">
+            <h2 class="admin admin-payments">${{ADC.totalPaymentsAmount}} <b>Ar</b></h2>
+            <h4 class="admin admin-payments">Total Payments</h4>
+          </div>
+          <div class="col-md-2">
+            <h2 class="admin admin-balance">${{ADC.totalLoansAmount - ADC.totalPaymentsAmount}} <b>Ar</b></h2>
+            <h4 class="admin admin-balance">Current Balance</h4>
+          </div>
+          <div class="col-md-2">
+            <h2 class="admin admin-donations">${{ADC.totalDonationsAmount}} <b>Ar</b></h2>
+            <h4 class="admin admin-donations">Total Donated</h4>
           </div>
         </div>
       </div>
@@ -24,19 +36,35 @@
 
     <div class="col-md-9">
       <div class="main-admin-dash">
-        <h3 style="display: inline;" >Sort By:</h3>
         <div style="margin-bottom: 2rem" class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">Date Started <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
-          <button type="button" class="btn btn-default">Amount Paid <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
-          <button type="button" class="btn btn-default">Loan Amount <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
-          <button type="button" class="btn btn-default">Donor Funded Amount <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+          <button type="button" class="btn btn-default admin-panel">Date Started <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+          <button type="button" class="btn btn-default admin-panel">Amount Paid <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+          <button type="button" class="btn btn-default admin-panel">Loan Amount <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
+          <button type="button" class="btn btn-default admin-panel">Donor Funded Amount <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span></button>
         </div>
+
         <div class="group-section" ng-repeat="group in ADC.groups">
-          <div class="panel panel-default group-table-panel">
+          <div class="panel panel-default group-table-panel admin-panel">
             <div class="panel-body">
-              <h1>{{group.name}}</h1>
-              <h3>{{group.city}}</h3>
-              <h3>{{group.region}}</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <h1>{{group.name}}</h1>
+                  <h5>{{group.city}}, {{group.region}}</h5>
+                </div>
+                <div class="col-md-3">
+                  <h2 class="admin-balance">{{group.groupAmount - group.groupPayments}}</h2>
+                  <h4 class="admin-balance">Group Balance</h4>
+                </div>
+                <div class="col-md-3">
+                  <h2 class="admin-payments">{{group.groupPayments}}</h2>
+                  <h4 class="admin-payments">Group Payments</h4>
+                </div>
+                <div class="col-md-2">
+                  <h2 class="admin admin-total">{{group.groupAmount}}</h2>
+                  <h4 class="admin-total">Group Total</h4>
+                </div>
+              </div>
+
               <table class="table">
                 <tr>
                   <th>Name</th>
@@ -44,15 +72,6 @@
                   <th>Amount Raised</th>
                   <th>Balance</th>
                   <th># of Payments</th>
-                  <th>Interest Paid</th>
-                </tr>
-                <tr>
-                  <td>Group Total</td>
-                  <td>{{group.groupAmount}}</td>
-                  <td>{{group.groupDonations}}</td>
-                  <td>{{group.groupAmount - group.groupPayments}}</td>
-                  <td></td>
-                  <td></td>
                 </tr>
                 <tr ng-repeat="loan in group.loans">
                   <td>{{loan.borrower.name}}</td>
@@ -60,7 +79,6 @@
                   <td>{{loan.totalDonations}}</td>
                   <td>{{loan.amount - loan.totalPayments}}</td>
                   <td>{{loan.payments.length}}</td>
-                  <td></td>
                 </tr>
               </table>
             </div>

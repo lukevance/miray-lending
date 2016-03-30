@@ -41,6 +41,7 @@ function adminCreate ($route, getLoanPlansService, getEntrepreneursService, getG
             // get borrowers
             getEntrepreneursService(function(entrepreneurs){
               $scope.entrepreneursInfo = entrepreneurs.data;
+              console.log(entrepreneurs);
               // get plans
               getLoanPlansService(function(loanPlans){
                 $scope.loanPlans = loanPlans;

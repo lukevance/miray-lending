@@ -219,11 +219,11 @@ li.ent-item {
 }*/
 
 .group-table-panel {
-  border-width: .5rem;
+  border-width: .25rem;
 }
 
 .drop-container {
-  min-width: 55rem;
+  min-width: 35rem;
 }
 
 .drop-form {
@@ -249,4 +249,33 @@ input.drop-form {
 
 .donation-form {
   text-align: left;
+}
+
+.admin-balance {
+  color: rgb(228, 101, 39);
+}
+
+.admin-payments {
+  color: rgba(86, 164, 70, 0.89);
+}
+
+h2.admin {
+  font-size: 24pt;
+}
+
+.admin-header {
+  margin-top: 2.5rem;
+}
+
+.admin-panel {
+  border-color: rgba(242, 154, 5, 0.5);
+}
+
+.admin-donations {
+  color: rgba(242, 154, 5, 0.8);
+}
+
+.create:hover {
+  cursor: pointer;
+  border-color: rgba(242, 154, 5, 0.5);
 }

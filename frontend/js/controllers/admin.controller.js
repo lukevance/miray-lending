@@ -19,4 +19,11 @@ function AdminController (getLoanPlansService, getEntrepreneursService, getGroup
     }
   }
 
+  // *** for dashboard layout
+  vm.changeSection = changeSection;
+  vm.showSection = 'overview';
+
+  function changeSection (section) {
+    vm.showSection = section;
+  }
 }
