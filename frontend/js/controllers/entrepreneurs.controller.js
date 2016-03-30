@@ -3,12 +3,14 @@ angular.module('lendingApp')
 
 function EntrepreneursController ($location, getOneEntrepreneurService, getEntrepreneursService) {
   var vm = this;
-  vm.title = 'Entrepreneur Page';
-  vm.subtitle = 'This is the entrepreuner page';
+  vm.sortByTracker = 'group.start_date';
   // get all Entrepreneur data
   getEntrepreneursService(saveEntrepreneurs);
   function saveEntrepreneurs (serviceResults) {
     vm.allEntrepreneurs = serviceResults.data;
+    console.log(vm.allEntrepreneurs[0]);
   }
+
+
 
 }

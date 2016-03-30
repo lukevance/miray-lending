@@ -5,7 +5,7 @@
     </div>
     <h4>{{entrepreneur.borrower.name}}</h4>
     <p>
-      {{entrepreneur.description | limitTo: 120}} <a href="/#/">...Read More</a>
+      {{entrepreneur.description | limitTo: 120}} <a data-toggle="modal">...Read More</a>
     </p>
     <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="{{(entrepreneur.totalDonations / entrepreneur.amount) * 100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{(entrepreneur.totalDonations / entrepreneur.amount) * 100}}%;">

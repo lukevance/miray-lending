@@ -1,20 +1,23 @@
+<div class="row ent-banner ent-banner-img">
+  <h1>Entrepreneurs</h1>
+</div>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
-      <h1>{{EC.title}}</h1>
-      <h3>{{EC.subtitle}}</h3>
+    <div class="col-md-12 sort-menu">
       <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default">Recently Started</button>
-        <button type="button" class="btn btn-default">Ending Soon</button>
-        <button type="button" class="btn btn-default">Loan Amount ^</button>
-        <button type="button" class="btn btn-default">Most Funded</button>
+        <ul class="sort-links">
+          <li>Recently Started</li>
+          <li>Ending Soon</li>
+          <li ng-click="EC.sortByTracker = 'amount';">Loan Amount</li>
+          <li ng-click="EC.sortByTracker = 'totalDonations';">Most Funded</li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <ul class="ent-item">
-        <li class="ent-item" ng-repeat="entrepreneur in EC.allEntrepreneurs">
+        <li class="ent-item" ng-repeat="entrepreneur in EC.allEntrepreneurs | orderBy: EC.sortByTracker:true">
           <ent-browse entrepreneur="entrepreneur">
           </ent-browse>
         </li>

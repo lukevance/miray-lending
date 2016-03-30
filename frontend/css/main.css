@@ -79,6 +79,41 @@ a.front-button:hover {
   }
 }
 
+.ent-banner-img {
+  background: url(../images/entreprenuer-banner.jpg);
+  width: 100%;
+  min-height: 22rem;
+  /*background-color: #426B8B;*/
+  color: #e1e2e2;
+  background-size: cover;
+}
+
+.ent-banner {
+  margin: 0;
+}
+
+div.ent-banner > h1 {
+  padding-top: 8rem;
+  padding-left: 3rem;
+  font-size: 40pt;
+  font-weight: bolder;
+}
+
+.sort-menu {
+  background-color: rgb(242, 154, 5);
+  margin-bottom: 5rem;
+}
+
+ul.sort-links > li {
+  list-style: none;
+  display: inline;
+  float: left;
+  color: rgb(245, 245, 245);
+  font-size: 16pt;
+  margin-left: 2rem;
+  padding: 1rem 0;
+}
+
 img.main-profile {
   max-width: 300px;
 }
@@ -129,9 +164,9 @@ li.ent-item {
   /*margin: auto;*/
 }
 
-li.ent-item:first-of-type {
+/*li.ent-item:first-of-type {
   margin-left: 5rem;
-}
+}*/
 
 .profile-bio {
   font-size: 16pt;
