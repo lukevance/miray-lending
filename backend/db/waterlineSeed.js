@@ -118,7 +118,7 @@ module.exports = {
       group: 1
     },
     {
-      name: 'Ramamonjisoa Rose Lys Rezyc',
+      name: 'Rose Lys Rezyc',
       bio: "Since Rose was young she helped her mother cook and now has become quite skilled at baking bread and sambos for her friends and family. Before getting a loan there didn't seem to be a feasible way to turn this skill into an opportunity to support herself.",
       dob: '1994-03-16',
       id_num_national: '415 092 008 787',
@@ -130,7 +130,7 @@ module.exports = {
       group: 1
     },
     {
-      name: 'Tahindrazana Catherine Denise',
+      name: 'Catherine Denise',
       bio: 'Catherine used to go fishing with her father when she was younger but now she doesn’t have the money to buy the boat or the nets in order to gather fish that she could sell. She has tried to get a loan in the past but without collateral she has been unable to find anyone willing to loan her money at a decent interest rate.',
       dob: '1972-03-24',
       id_num_national: '401 032 004 635',
@@ -142,7 +142,7 @@ module.exports = {
       group: 1
     },
     {
-      name: 'Rakotonindrina Pierre Joseph',
+      name: 'Pierre Joseph',
       bio: 'Pierre is a very hard working man who was having trouble supporting his family. He was working for a man in the city making $.50 a day but this opportunity for work was not very consistent and he needed to send his sons to school.',
       dob: '1970-02-05',
       id_num_national: '401 031 002 302',
@@ -238,7 +238,7 @@ module.exports = {
       group: 3
     },
     {
-      name: 'Ravoarisoa Marie adeline',
+      name: 'Ravaorisoa Marie Adeline',
       bio: 'Ravaoarisoa lost her husband in a motorcycle accident in 2013, she has been making a living for her and her two sons mending clothes in the local village.',
       dob: '1987-08-27',
       id_num_national: '415 012 005 740',
@@ -471,7 +471,7 @@ module.exports = {
       amount: 2000000,
       balance: 2000000,
       rate_plan_id: 1,
-      description: 'Ravaoarisoa needs a loan for a sewing machine and supplies for her store.',
+      description: 'Ravaoarisoa needs a loan for a sewing machine and supplies for her store. She hopes to increase her productivity and keep more stock on her shelves so that her store can servce a greater number of customers.',
       funded: false,
       active: true,
       borrower: 19,

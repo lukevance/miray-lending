@@ -137,6 +137,10 @@ li.ent-item:first-of-type {
   font-size: 16pt;
 }
 
+.loan-details {
+  font-size: 14pt;
+}
+
 /*.ent-item.ent-home {
   margin-left: 10%;
 }*/
