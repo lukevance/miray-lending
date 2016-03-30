@@ -30,11 +30,11 @@ img.profile-img {
 }
 
 .main-title {
-  font-size: 40pt;
+  letter-spacing: 0.05px;
 }
 
-.main-subtitle {
-  font-size: 30pt;
+.main-section {
+  margin-bottom: 12rem;
 }
 
 .front-button {
@@ -273,6 +273,10 @@ h2.admin {
 
 .admin-donations {
   color: rgba(242, 154, 5, 0.8);
+}
+
+.main-logo {
+  width: 220px;
 }
 
 .create:hover {
