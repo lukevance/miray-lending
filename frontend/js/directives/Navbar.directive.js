@@ -8,7 +8,7 @@ function navbarMiray (userSigninService) {
       user: '='
     },
     templateUrl: 'partials/navbar.html',
-    controller: function ($scope, $window) {
+    controller: function ($scope, $window, $location) {
       if ($window.localStorage.token) {
         $scope.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
       }
@@ -21,11 +21,11 @@ function navbarMiray (userSigninService) {
           $window.localStorage.token = response.data.token;
           if ($window.localStorage.token) {
             $scope.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
-            // if ($scope.userInfo.role === 'admin') {
-            //   $window.location.href('/#/mydashboard');
-            // } else {
-            //   $window.location.href('/#/mydashboard');
-            // }
+            if ($scope.userInfo.role === 'admin') {
+              $location.path('/admin');
+            } else {
+              $location.path('/mydashboard');
+            }
           }
         });
       }

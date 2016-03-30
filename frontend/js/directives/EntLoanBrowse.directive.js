@@ -8,7 +8,7 @@ function entBrowse (userSigninService, newDonationService) {
       entrepreneur: '='
     },
     templateUrl: 'partials/entBrowse.html',
-    controller: function($scope, $window){
+    controller: function($scope, $window, $location){
       // remove this line later when donations are connected
       $scope.selectEnt = selectEnt;
       $scope.signinActive = false;
@@ -62,6 +62,10 @@ function entBrowse (userSigninService, newDonationService) {
 
         // else open donation
 
+      }
+      $scope.signuproute = signuproute;
+      function signuproute() {
+        $location.path('/signup');
       }
     }
   };
