@@ -37,6 +37,21 @@ function UserController ($window, getLoanForDonorService, getUserProfileService)
 
   }
 
+  vm.sortByTracker = 'group.start_date';
+  vm.sort = [true, false, false];
+  vm.selectSort = selectSort;
+
+  function selectSort(num) {
+    for (var i = 0; i < vm.sort.length; i++) {
+      if (i === num) {
+        vm.sort[i] = true;
+      } else {
+        vm.sort[i] = false;
+      }
+    }
+    console.log(vm.sort);
+  }
+
 
 
 }

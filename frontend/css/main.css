@@ -176,6 +176,11 @@ img.profile {
   border-radius: 0;
 }
 
+.donation-sort {
+  margin-top: 2rem;
+  background-color: rgb(242, 154, 5);
+}
+
 li.ent-item {
   /*border: black thin solid;*/
   list-style: none;

@@ -6,13 +6,14 @@
         <h3>{{UC.profile.name}}</h3>
       </div>
       <div class="col-md-8">
-        <p>
-          Main header: buttons for arranging loans 'active' 'raising' 'all' 'sort by'
-        </p>
-        <div class="btn-group btn-group-lg" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">Left</button>
-          <button type="button" class="btn btn-default">Middle</button>
-          <button type="button" class="btn btn-default">Right</button>
+        <div class="panel donation-sort">
+          <div class="btn-group panel-body" role="group" aria-label="...">
+            <ul class="sort-links">
+              <li ng-class="{active: UC.sort[0]}" ng-click="UC.sortByTracker = '-amount'; UC.selectSort(0);">Loan Amount</li>
+              <li ng-class="{active: UC.sort[1]}" ng-click="UC.sortByTracker = '-loan.paymentForDonor'; UC.selectSort(1);">Paid Back</li>
+              <li ng-class="{active: UC.sort[2]}" ng-click="UC.sortByTracker = '(amount - loan.paymentForDonor)'; UC.selectSort(2);">Balance</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -31,7 +32,7 @@
       </div> <!-- end of main col -->
       <div class="col-md-8">
         <div class="main-user-component">
-          <div class="panel panel-default" ng-repeat="donation in UC.profile.donations">
+          <div class="panel panel-default" ng-repeat="donation in UC.profile.donations | orderBy: UC.sortByTracker">
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-4">
@@ -48,7 +49,7 @@
                 <div class="col-md-3">
                   <h5>Donated: {{donation.amount}}</h5>
                   <h5>Paid Back: {{donation.loan.paymentForDonor}}</h5>
-                  <h5>Total loan: {{donation.loan.amount}}</h5>
+                  <h5>Balance: {{donation.amount - donation.loan.paymentForDonor}}</h5>
                   <h5>Payments made: {{donation.loan.payments.length}}</h5>
                 </div>
               </div>
