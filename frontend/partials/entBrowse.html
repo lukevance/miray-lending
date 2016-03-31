@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default ent-item">
   <div class="panel-body" data-toggle="modal" data-target="#entModal{{entrepreneur.borrower.id}}">
     <div class="profile-wrapper">
       <img class="profile" src="{{entrepreneur.borrower.image_url}}" alt="" />
@@ -83,7 +83,11 @@
                   <button class="btn btn-default btn-primary" type="button" name="signinBtn" ng-click="signinSubmit(email, password); email=''; password='';">Signin</button>
                   <button class="btn btn-default" type="button" name="cancelBtn" ng-click="email=''; password=''; signinActive=false;">Cancel</button>
                 </form>
+<<<<<<< Updated upstream
                 <p>Not already a user? <a data-dismiss="modal"  href="/#/signup"> Signup</a></p>
+=======
+                <p>Not already a user? <a data-dismiss="modal" ng-click="signuproute()"> Signup</a></p>
+>>>>>>> Stashed changes
               </div>
             </div>
           </div>

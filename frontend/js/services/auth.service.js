@@ -4,7 +4,7 @@ angular.module('lendingApp')
 
 function userSigninService ($http, $window) {
   return function (userCredentials, nextFunc) {
-    return $http.post('//localhost:3000/auth/login', userCredentials)
+    return $http.post('//miraydevelopment.herokuapp.com/auth/login', userCredentials)
     .then(function(authedUserData){
       nextFunc(authedUserData);
     })

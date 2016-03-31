@@ -8,7 +8,7 @@ function generalService(){
 
 function newPaymentService ($http) {
   return function (paymentObj, nextFunc) {
-    return $http.post('//localhost:3000/pay/new', paymentObj)
+    return $http.post('//miraydevelopment.herokuapp.com/pay/new', paymentObj)
     .then(function(paymentData){
       nextFunc(paymentData);
     });

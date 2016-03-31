@@ -5,7 +5,7 @@ angular.module('lendingApp')
 
 function newGroupService ($http) {
   return function (groupObj, nextFunc) {
-    return $http.post('//localhost:3000/group/new', groupObj)
+    return $http.post('//miraydevelopment.herokuapp.com/group/new', groupObj)
     .then(function(groupData){
       nextFunc(groupData);
     });
@@ -14,7 +14,7 @@ function newGroupService ($http) {
 
 function getGroupAdminService ($http) {
   return function (nextFunc) {
-    return $http.get('//localhost:3000/group/allData')
+    return $http.get('//miraydevelopment.herokuapp.com/group/allData')
     .then(function(allGroups){
       nextFunc(allGroups.data);
     });
@@ -23,7 +23,7 @@ function getGroupAdminService ($http) {
 
 function getGroupService ($http) {
   return function (nextFunc) {
-    return $http.get('//localhost:3000/group')
+    return $http.get('//miraydevelopment.herokuapp.com/group')
     .then(function(allGroups){
       nextFunc(allGroups.data);
     });

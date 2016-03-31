@@ -7,7 +7,7 @@ angular.module('lendingApp')
 function newUserService($http){
   return function (userData, nextFunc) {
     // connect to new user post request at API
-    $http.post('//localhost:3000/user/new', userData)
+    $http.post('//miraydevelopment.herokuapp.com/user/new', userData)
     .then(function(responseData, err){
       if (err) {
         throw err;
@@ -25,7 +25,7 @@ function newUserService($http){
 function getUserService ($http){
   // get user info from API
   return function (userID, nextFunc) {
-    return $http.get('//localhost:3000/user/' + userID)
+    return $http.get('//miraydevelopment.herokuapp.com/user/' + userID)
     .then(function(userData, err){
       if (err) {
         throw err;
@@ -42,7 +42,7 @@ function getUserService ($http){
 function getUserProfileService ($http){
   // get user info from API
   return function (userID, nextFunc) {
-    return $http.get('//localhost:3000/user/profile/' + userID)
+    return $http.get('//miraydevelopment.herokuapp.com/user/profile/' + userID)
     .then(function(userData, err){
       if (err) {
         throw err;
@@ -59,7 +59,7 @@ function getUserProfileService ($http){
 function editUserService ($http){
   // edit user info API
   return function (userID, editedUserObj, nextFunc){
-    return $http.put('//localhost:3000/user/update/' + userID)
+    return $http.put('//miraydevelopment.herokuapp.com/user/update/' + userID)
     .then(function(updatedUser, err){
       if (err) {
         throw err;

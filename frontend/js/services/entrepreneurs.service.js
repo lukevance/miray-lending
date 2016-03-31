@@ -6,7 +6,7 @@ angular.module('lendingApp')
 
 function getEntrepreneursService ($http) {
   return function (nextFunc) {
-    return $http.get('//localhost:3000/borrower')
+    return $http.get('//miraydevelopment.herokuapp.com/borrower')
     .then(function(entrepreneursData) {
       nextFunc(entrepreneursData);
     })
@@ -18,7 +18,7 @@ function getEntrepreneursService ($http) {
 
 function getOneEntrepreneurService ($http) {
   return function (entID, nextFunc) {
-    return $http.get('//localhost:3000/borrower' + entID)
+    return $http.get('//miraydevelopment.herokuapp.com/borrower' + entID)
     .then(function(entrepreneurData) {
       nextFunc(entrepreneurData);
     })
@@ -30,7 +30,7 @@ function getOneEntrepreneurService ($http) {
 
 function newEntrepreneurService ($http) {
   return function (newEntObj, nextFunc) {
-    return $http.post('//localhost:3000/borrower/new', newEntObj)
+    return $http.post('//miraydevelopment.herokuapp.com/borrower/new', newEntObj)
     .then(function(createdEnt){
       nextFunc(createdEnt);
     })
@@ -42,7 +42,7 @@ function newEntrepreneurService ($http) {
 
 function updateEntrepreneurSevice ($http) {
   return function (entID, updatedEntObj, nextFunc) {
-    return $http.put('//localhost:3000/update' + entID)
+    return $http.put('//miraydevelopment.herokuapp.com/borrower/update' + entID)
     .then(function(editedEnt) {
       nextFunc(editedEnt);
     })

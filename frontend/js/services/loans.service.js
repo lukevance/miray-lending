@@ -6,7 +6,7 @@ angular.module('lendingApp')
 
   function newLoanService ($http) {
     return function (loanObj, nextFunc) {
-      return $http.post('//localhost:3000/loan/new', loanObj)
+      return $http.post('//miraydevelopment.herokuapp.com/loan/new', loanObj)
       .then(function(loanData){
         nextFunc(loanData);
       });
@@ -15,7 +15,7 @@ angular.module('lendingApp')
 
   function getLoanPlansService($http) {
     return function (nextFunc) {
-      return $http.get('//localhost:3000/loan/plans')
+      return $http.get('//miraydevelopment.herokuapp.com/loan/plans')
       .then(function(loanPlans){
         nextFunc(loanPlans.data);
       });
@@ -24,7 +24,7 @@ angular.module('lendingApp')
 
   function getLoanService ($http) {
     return function (loanID, nextFunc) {
-      return $http.get('//localhost:3000/loan/' + loanID)
+      return $http.get('//miraydevelopment.herokuapp.com/loan/' + loanID)
       .then(function(loanInfo){
         nextFunc(loanInfo.data);
       });
@@ -33,7 +33,7 @@ angular.module('lendingApp')
 
   function getLoanForDonorService ($http) {
     return function (loanID, userID, nextFunc) {
-      return $http.get('//localhost:3000/loan/' + loanID + '?donor=' + userID)
+      return $http.get('//miraydevelopment.herokuapp.com/loan/' + loanID + '?donor=' + userID)
       .then(function(loanInfo){
         nextFunc(loanInfo.data);
       });
