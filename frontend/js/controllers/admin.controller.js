@@ -3,8 +3,6 @@ angular.module('lendingApp')
 
 function AdminController (getLoanPlansService, getEntrepreneursService, getGroupAdminService) {
   var vm = this;
-  vm.title = 'Admin Page';
-  vm.subtitle = 'welcome to the admin page - this page needs authorization';
   getGroupAdminService(saveGroups);
 
   function saveGroups (groupInfo) {

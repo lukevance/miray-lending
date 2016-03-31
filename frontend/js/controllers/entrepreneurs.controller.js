@@ -10,7 +10,6 @@ function EntrepreneursController ($location, getOneEntrepreneurService, getEntre
   getEntrepreneursService(saveEntrepreneurs);
   function saveEntrepreneurs (serviceResults) {
     vm.allEntrepreneurs = serviceResults.data;
-    console.log(vm.allEntrepreneurs[0]);
   }
 
   function selectSort(num) {

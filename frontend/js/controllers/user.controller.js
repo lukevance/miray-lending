@@ -51,7 +51,6 @@ function UserController ($window, editUserService, getLoanForDonorService, getUs
         vm.sort[i] = false;
       }
     }
-    console.log(vm.sort);
   }
 
 

@@ -181,6 +181,10 @@ img.profile {
   background-color: rgb(242, 154, 5);
 }
 
+.ent-item {
+
+}
+
 li.ent-item {
   /*border: black thin solid;*/
   list-style: none;

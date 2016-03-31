@@ -18,7 +18,7 @@ const app = express();
 // ------ > NEED TO PROTECT app.use('/group/allData', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/user/update', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/user/profile', expressJwt({secret: process.env.JWT_Secret}));
-// app.use('/user/del', expressJwt({secret: process.env.JWT_Secret}));
+app.use('/user/del', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/borrower/new', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/borrower/update', expressJwt({secret: process.env.JWT_Secret}));
 app.use('/borrower/del', expressJwt({secret: process.env.JWT_Secret}));

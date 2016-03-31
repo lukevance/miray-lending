@@ -12,13 +12,12 @@ var config = {
   connections: {
     myLocalPostgres: {
       adapter: 'postgres',
-      host: 'localhost',
-      database: 'microlending'
+      url: process.env.DATABASE_URL
     }
   },
 
   defaults: {
-    migrate: 'alter'
+    migrate: process.env.migrate
   }
 };
 
