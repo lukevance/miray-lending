@@ -4,7 +4,7 @@ angular.module('lendingApp')
 
 function newDonationService ($http) {
   return function (donationDetails, nextFunc) {
-    return $http.post('//miraydevelopment.herokuapp.com/new', donationDetails)
+    return $http.post('//miraydevelopment.herokuapp.com/donation/new', donationDetails)
     .then(function(authedUserData){
       nextFunc(authedUserData);
     })
