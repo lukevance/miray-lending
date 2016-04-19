@@ -1,14 +1,24 @@
 angular.module('lendingApp')
-  .service('generalService', ['$http', generalService])
-  .service('newPaymentService', ['$http', newPaymentService]);
+  .service('envService', [envService])
+  .service('newPaymentService', ['$http', 'envService', newPaymentService]);
 
-function generalService(){
-  // provide general data and functionality
+function envService(){
+  // provide utility variables and stuff
+  var development = true;
+  var apiPath = '';
+  if (development) {
+    apiPath = '//localhost:3000';
+  } else {
+    apiPath = '//miraydevelopment.herokuapp.com';
+  }
+  return {
+    path: apiPath
+  };
 }
 
-function newPaymentService ($http) {
+function newPaymentService ($http, envService) {
   return function (paymentObj, nextFunc) {
-    return $http.post('//miraydevelopment.herokuapp.com/pay/new', paymentObj)
+    return $http.post(envService.path + '/pay/new', paymentObj)
     .then(function(paymentData){
       nextFunc(paymentData);
     });
