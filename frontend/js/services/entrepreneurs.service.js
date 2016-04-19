@@ -1,12 +1,12 @@
 angular.module('lendingApp')
-  .service('getEntrepreneursService', ['$http', getEntrepreneursService])
-  .service('getOneEntrepreneurService', ['$http', getOneEntrepreneurService])
-  .service('newEntrepreneurService', ['$http', newEntrepreneurService])
-  .service('updateEntrepreneurSevice', ['$http', updateEntrepreneurSevice]);
+  .service('getEntrepreneursService', ['$http', 'envService', getEntrepreneursService])
+  .service('getOneEntrepreneurService', ['$http', 'envService', getOneEntrepreneurService])
+  .service('newEntrepreneurService', ['$http', 'envService', newEntrepreneurService])
+  .service('updateEntrepreneurSevice', ['$http', 'envService', updateEntrepreneurSevice]);
 
-function getEntrepreneursService ($http) {
+function getEntrepreneursService ($http, envService) {
   return function (nextFunc) {
-    return $http.get('//miraydevelopment.herokuapp.com/borrower')
+    return $http.get(envService.path + '/borrower')
     .then(function(entrepreneursData) {
       nextFunc(entrepreneursData);
     })
@@ -16,9 +16,9 @@ function getEntrepreneursService ($http) {
   };
 }
 
-function getOneEntrepreneurService ($http) {
+function getOneEntrepreneurService ($http, envService) {
   return function (entID, nextFunc) {
-    return $http.get('//miraydevelopment.herokuapp.com/borrower' + entID)
+    return $http.get(envService.path + '/borrower' + entID)
     .then(function(entrepreneurData) {
       nextFunc(entrepreneurData);
     })
@@ -28,9 +28,9 @@ function getOneEntrepreneurService ($http) {
   };
 }
 
-function newEntrepreneurService ($http) {
+function newEntrepreneurService ($http, envService) {
   return function (newEntObj, nextFunc) {
-    return $http.post('//miraydevelopment.herokuapp.com/borrower/new', newEntObj)
+    return $http.post(envService.path + '/borrower/new', newEntObj)
     .then(function(createdEnt){
       nextFunc(createdEnt);
     })
@@ -40,9 +40,9 @@ function newEntrepreneurService ($http) {
   };
 }
 
-function updateEntrepreneurSevice ($http) {
+function updateEntrepreneurSevice ($http, envService) {
   return function (entID, updatedEntObj, nextFunc) {
-    return $http.put('//miraydevelopment.herokuapp.com/borrower/update' + entID)
+    return $http.put(envService.path + '/borrower/update' + entID)
     .then(function(editedEnt) {
       nextFunc(editedEnt);
     })

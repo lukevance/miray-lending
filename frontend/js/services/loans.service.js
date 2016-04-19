@@ -1,39 +1,39 @@
 angular.module('lendingApp')
-  .service('getLoanPlansService', ['$http', getLoanPlansService])
-  .service('newLoanService', ['$http', newLoanService])
-  .service('getLoanService', ['$http', getLoanService])
-  .service('getLoanForDonorService', ['$http', getLoanForDonorService]);
+  .service('getLoanPlansService', ['$http', 'envService', getLoanPlansService])
+  .service('newLoanService', ['$http', 'envService', newLoanService])
+  .service('getLoanService', ['$http', 'envService', getLoanService])
+  .service('getLoanForDonorService', ['$http', 'envService', getLoanForDonorService]);
 
-  function newLoanService ($http) {
+  function newLoanService ($http, envService) {
     return function (loanObj, nextFunc) {
-      return $http.post('//miraydevelopment.herokuapp.com/loan/new', loanObj)
+      return $http.post(envService.path + '/loan/new', loanObj)
       .then(function(loanData){
         nextFunc(loanData);
       });
     };
   }
 
-  function getLoanPlansService($http) {
+  function getLoanPlansService($http, envService) {
     return function (nextFunc) {
-      return $http.get('//miraydevelopment.herokuapp.com/loan/plans')
+      return $http.get(envService.path + '/loan/plans')
       .then(function(loanPlans){
         nextFunc(loanPlans.data);
       });
     };
   }
 
-  function getLoanService ($http) {
+  function getLoanService ($http, envService) {
     return function (loanID, nextFunc) {
-      return $http.get('//miraydevelopment.herokuapp.com/loan/' + loanID)
+      return $http.get(envService.path + '/loan/' + loanID)
       .then(function(loanInfo){
         nextFunc(loanInfo.data);
       });
     };
   }
 
-  function getLoanForDonorService ($http) {
+  function getLoanForDonorService ($http, envService) {
     return function (loanID, userID, nextFunc) {
-      return $http.get('//miraydevelopment.herokuapp.com/loan/' + loanID + '?donor=' + userID)
+      return $http.get(envService.path + '/loan/' + loanID + '?donor=' + userID)
       .then(function(loanInfo){
         nextFunc(loanInfo.data);
       });

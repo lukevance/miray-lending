@@ -1,10 +1,10 @@
 angular.module('lendingApp')
-  .service('newDonationService', ['$http', newDonationService]);
+  .service('newDonationService', ['$http', 'envService', newDonationService]);
   // .service('currentUserService', [currentUserService]);
 
-function newDonationService ($http) {
+function newDonationService ($http, envService) {
   return function (donationDetails, nextFunc) {
-    return $http.post('//miraydevelopment.herokuapp.com/donation/new', donationDetails)
+    return $http.post(envService.path + '/donation/new', donationDetails)
     .then(function(authedUserData){
       nextFunc(authedUserData);
     })
