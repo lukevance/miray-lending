@@ -4,7 +4,6 @@ angular.module('lendingApp')
 
 function userSigninService ($http, $window, envService) {
   return function (userCredentials, nextFunc) {
-    console.log(userCredentials);
     return $http.post(envService.path + '/auth/login', userCredentials)
     .then(function(authedUserData){
       nextFunc(authedUserData);

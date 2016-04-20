@@ -17,7 +17,6 @@ function navbarMiray (userSigninService) {
       function signinSubmit (email, password) {
         var userCred = {email: email, password: password};
         userSigninService(userCred, function(response){
-          // console.log(window.atob(response.data.token.split('.')[1]));
           $window.localStorage.token = response.data.token;
           if ($window.localStorage.token) {
             $scope.userInfo = JSON.parse(window.atob($window.localStorage.token.split('.')[1]));
