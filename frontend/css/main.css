@@ -77,6 +77,42 @@ a.front-button:hover {
     -o-background-size: cover;
     background-size: cover;
   }
+
+  .main-logo {
+    margin-top: 3rem;
+  }
+
+  .front-button {
+    color: rgba(217, 135, 40, 0.88);
+    background: transparent;
+    border: solid 2px rgba(217, 135, 40, 0.88);
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+
+  a.front-button:hover {
+    background: rgba(217, 135, 40, 0.63);
+    border: solid 2px rgba(217, 135, 40, 0.88);
+    color: white;
+  }
+
+  li.ent-item {
+    /*border: black thin solid;*/
+    list-style: none;
+    display: inline;
+    float: left;
+    width: 35rem;
+    height: 60rem;
+    padding: 1rem;
+    /*margin: 0 3rem;*/
+    /*margin: auto;*/
+  }
+
+  ul.ent-item {
+    
+  }
+
+
 }
 
 .ent-banner-img {
@@ -179,10 +215,6 @@ img.profile {
 .donation-sort {
   margin-top: 2rem;
   background-color: rgb(242, 154, 5);
-}
-
-.ent-item {
-
 }
 
 li.ent-item {
