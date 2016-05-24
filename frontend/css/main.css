@@ -54,11 +54,11 @@ a.front-button:hover {
   min-height: 100%;
   /*background-color: #426B8B;*/
   color: #e1e2e2;
-  background: url(../images/responsive-background.jpg) no-repeat center center fixed;
+  background: url(../app/images/responsive-background.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 .bgimage {
-  background: url(../images/responsive-background.jpg) no-repeat center center fixed;
+  background: url(../app/images/responsive-background.jpg) no-repeat center center fixed;
   background-size: cover;
   min-height: 600px;
   -webkit-background-size: cover;
@@ -69,7 +69,7 @@ a.front-button:hover {
 
 @media (max-width: 768px) {
   .bgimage {
-    background: url(../images/responsive-background.jpg) no-repeat center center fixed;
+    background: url(../app/images/responsive-background.jpg) no-repeat center center fixed;
     background-size: cover;
     max-height: 400px;
     -webkit-background-size: cover;
@@ -109,14 +109,18 @@ a.front-button:hover {
   }
 
   ul.ent-item {
-    
+
   }
 
 
 }
 
+.inline {
+  display: inline;
+}
+
 .ent-banner-img {
-  background: url(../images/entreprenuer-banner.jpg);
+  background: url(../app/images/entreprenuer-banner.jpg);
   width: 100%;
   min-height: 22rem;
   /*background-color: #426B8B;*/
