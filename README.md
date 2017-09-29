@@ -27,4 +27,4 @@ Catalog view for donors to browse open projects and borrowers:
 
 Admin view for managing borrowers and tracking payments/donations:
 
-<img width="1438" alt="screen shot 2017-09-28 at 11 07 12 pm" src="https://user-images.githubusercontent.com/13320316/31001575-26296cb4-a4a2-11e7-8440-6f64eb708020.png">
+<img width="1431" alt="screen shot 2017-09-28 at 11 16 14 pm" src="https://user-images.githubusercontent.com/13320316/31001718-1eb4c81a-a4a3-11e7-92e5-0f8aee15e77c.png">
