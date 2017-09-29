@@ -3,7 +3,7 @@ angular.module('lendingApp')
 
 function adminCreate ($route, getLoanPlansService, getEntrepreneursService, getGroupService, newGroupService, newEntrepreneurService, newLoanService, newPaymentService) {
   return {
-    restric: 'E',
+    restrict: 'E',
     templateUrl: 'partials/adminCreatePanel.html',
     controller: function ($scope) {
       $scope.groupActive = false;

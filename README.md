@@ -1,10 +1,10 @@
 # Miray Lending
 
 ## Live Site URL
-http://www.miraydevelopment.org
+miray-development.firebaseapp.com
 
 ### Summary
-Microlending platform for raising funds, matching loan applicants with lenders and tracking analytics. This service is being designed for Miray Lending a non-profit based in Madagascar. However, this repo will be left fairly flavorless in order to be repurposed for the growing microlending industry.
+Microlending platform for raising funds, matching loan applicants with lenders and tracking analytics. This application was designed as a proof of concept for Miray Lending, a non-profit based in Madagascar. However, the intention of this codebase is to be left fairly flavorless in order to be repurposed for the growing microlending industry.
 
 ### Case Study
 
@@ -12,7 +12,7 @@ This service is aimed at donors looking for a level of interaction in their dona
 
 ### Backend Info
 
-The backend of this project was built on Node/Express and uses PostsgreSQL and Waterline ORM. The backend supports active borrower users, but the current frontend iteration of this project only allows admin users to create borrower users.
+The backend of this project was built on Node/Express and uses PostsgreSQL and Waterline ORM. The backend supports active borrower users as well as donor users, but the current frontend iteration of this project only allows admin users to create borrower users.
 
 ### Frontend Info
 
